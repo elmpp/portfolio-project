@@ -1,0 +1,53 @@
+query EventQuery {
+  eventView(id: "1") {
+    id
+    displayed
+    url
+    feedSupplier
+    status
+    name
+    canonicalisedName
+    eventDate
+    type
+    displayOrder
+    markets(condition: { canonicalisedName: "match-result" }) {
+      pageInfo {
+        hasNextPage
+      }
+      nodes {
+        cashoutAvailable
+        eachwayAvailable
+        firstFourAvailable
+        forecastAvailable
+        guaranteedPriceAvailable
+        placeAvailable
+        quinellaAvailable
+        tricastAvailable
+        displayOrder
+        isDefault
+        feedSupplier
+        betInPlay
+        betTill
+        bettingStatus
+        status
+        name
+        canonicalisedName
+        outcomes {
+          nodes {
+            odds
+            oddsDecimal
+            handicap
+            displayOrder
+            isHome
+            feedSupplier
+            livePriceAvailable
+            startingPriceAvailable
+            status
+            name
+            canonicalisedName
+          }
+        }
+      }
+    }
+  }
+}

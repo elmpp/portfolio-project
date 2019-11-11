@@ -1,0 +1,6 @@
+{
+  "watch": ["src/code"],
+  "exec": "yarn dev:code-load",
+  "exec-ignore": "yarn dev:code-load && (pushd ../partridge-api; APP_ENV=local NODE_ENV=development yarn dev)",
+  "ext": "sql"
+}

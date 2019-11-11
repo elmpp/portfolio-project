@@ -1,0 +1,5229 @@
+type _TypeormMigration implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: Int!
+  timestamp: BigInt!
+  name: String!
+}
+
+"""
+A condition to be used against `_TypeormMigration` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input _TypeormMigrationCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: Int
+
+  """Checks for equality with the object’s `timestamp` field."""
+  timestamp: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+}
+
+"""A connection to a list of `_TypeormMigration` values."""
+type _TypeormMigrationsConnection {
+  """A list of `_TypeormMigration` objects."""
+  nodes: [_TypeormMigration]!
+
+  """
+  A list of edges which contains the `_TypeormMigration` and cursor to aid in pagination.
+  """
+  edges: [_TypeormMigrationsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `_TypeormMigration` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `_TypeormMigration` edge in the connection."""
+type _TypeormMigrationsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `_TypeormMigration` at the end of the edge."""
+  node: _TypeormMigration
+}
+
+"""Methods to use when ordering `_TypeormMigration`."""
+enum _TypeormMigrationsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TIMESTAMP_ASC
+  TIMESTAMP_DESC
+  NAME_ASC
+  NAME_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""All input for the `applyCanonicalise` mutation."""
+input ApplyCanonicaliseInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  metaParam: MetaInput
+  append: String
+}
+
+"""The output of our `applyCanonicalise` mutation."""
+type ApplyCanonicalisePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  meta: Meta
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `applyRenaming` mutation."""
+input ApplyRenamingInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  entityName: String
+  metaParam: MetaInput
+}
+
+"""The output of our `applyRenaming` mutation."""
+type ApplyRenamingPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  meta: Meta
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+enum BettingStatusEnum {
+  PRICED
+}
+
+"""
+A signed eight-byte integer. The upper big integer values are greater than the
+max value for a JavaScript number. Therefore all big integers will be output as
+strings and not numbers.
+"""
+scalar BigInt
+
+type Category1 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  displayOrder: Int!
+
+  """Reads a single `MetaCategory1` that is related to this `Category1`."""
+  metaCategory1ById: MetaCategory1
+
+  """Reads and enables pagination through a set of `MetaCategory1`."""
+  metaCategory1SById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory1`."""
+    orderBy: [MetaCategory1sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory1Condition
+  ): MetaCategory1sConnection! @deprecated(reason: "Please use metaCategory1ById instead")
+
+  """Reads and enables pagination through a set of `Category2`."""
+  category2s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category2`."""
+    orderBy: [Category2sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: Category2Condition
+  ): Category2sConnection!
+}
+
+"""
+A condition to be used against `Category1` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input Category1Condition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+}
+
+"""A connection to a list of `Category1` values."""
+type Category1sConnection {
+  """A list of `Category1` objects."""
+  nodes: [Category1]!
+
+  """
+  A list of edges which contains the `Category1` and cursor to aid in pagination.
+  """
+  edges: [Category1sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Category1` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Category1` edge in the connection."""
+type Category1sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Category1` at the end of the edge."""
+  node: Category1
+}
+
+"""Methods to use when ordering `Category1`."""
+enum Category1sOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Category2 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  displayOrder: Int!
+  category1Id: BigInt!
+
+  """Reads a single `Category1` that is related to this `Category2`."""
+  category1: Category1
+
+  """Reads a single `MetaCategory2` that is related to this `Category2`."""
+  metaCategory2ById: MetaCategory2
+
+  """Reads and enables pagination through a set of `MetaCategory2`."""
+  metaCategory2SById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory2`."""
+    orderBy: [MetaCategory2sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory2Condition
+  ): MetaCategory2sConnection! @deprecated(reason: "Please use metaCategory2ById instead")
+
+  """Reads and enables pagination through a set of `Category3`."""
+  category3s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category3`."""
+    orderBy: [Category3sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: Category3Condition
+  ): Category3sConnection!
+}
+
+"""
+A condition to be used against `Category2` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input Category2Condition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `category1Id` field."""
+  category1Id: BigInt
+}
+
+"""A connection to a list of `Category2` values."""
+type Category2sConnection {
+  """A list of `Category2` objects."""
+  nodes: [Category2]!
+
+  """
+  A list of edges which contains the `Category2` and cursor to aid in pagination.
+  """
+  edges: [Category2sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Category2` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Category2` edge in the connection."""
+type Category2sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Category2` at the end of the edge."""
+  node: Category2
+}
+
+"""Methods to use when ordering `Category2`."""
+enum Category2sOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  CATEGORY1_ID_ASC
+  CATEGORY1_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Category3 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  displayOrder: Int!
+  category2Id: BigInt!
+
+  """Reads a single `Category2` that is related to this `Category3`."""
+  category2: Category2
+
+  """Reads a single `MetaCategory3` that is related to this `Category3`."""
+  metaCategory3ById: MetaCategory3
+
+  """Reads and enables pagination through a set of `MetaCategory3`."""
+  metaCategory3SById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory3`."""
+    orderBy: [MetaCategory3sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory3Condition
+  ): MetaCategory3sConnection! @deprecated(reason: "Please use metaCategory3ById instead")
+
+  """Reads and enables pagination through a set of `Event`."""
+  events(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Event`."""
+    orderBy: [EventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EventCondition
+  ): EventsConnection!
+}
+
+"""
+A condition to be used against `Category3` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input Category3Condition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `category2Id` field."""
+  category2Id: BigInt
+}
+
+"""A connection to a list of `Category3` values."""
+type Category3sConnection {
+  """A list of `Category3` objects."""
+  nodes: [Category3]!
+
+  """
+  A list of edges which contains the `Category3` and cursor to aid in pagination.
+  """
+  edges: [Category3sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Category3` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Category3` edge in the connection."""
+type Category3sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Category3` at the end of the edge."""
+  node: Category3
+}
+
+"""Methods to use when ordering `Category3`."""
+enum Category3sOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  CATEGORY2_ID_ASC
+  CATEGORY2_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type ConcreteEvent implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  displayed: Boolean!
+  url: String
+  processedId: BigInt!
+  feedSupplier: FeedSupplierEnum!
+  status: StatusEnum!
+
+  """Reads a single `Event` that is related to this `ConcreteEvent`."""
+  processed: Event
+
+  """
+  Reads a single `MetaConcreteEvent` that is related to this `ConcreteEvent`.
+  """
+  metaConcreteEventById: MetaConcreteEvent
+
+  """Reads and enables pagination through a set of `MetaConcreteEvent`."""
+  metaConcreteEventsById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteEvent`."""
+    orderBy: [MetaConcreteEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteEventCondition
+  ): MetaConcreteEventsConnection! @deprecated(reason: "Please use metaConcreteEventById instead")
+
+  """Reads and enables pagination through a set of `ConcreteMarket`."""
+  concreteMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteMarket`."""
+    orderBy: [ConcreteMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteMarketCondition
+  ): ConcreteMarketsConnection!
+}
+
+"""
+A condition to be used against `ConcreteEvent` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input ConcreteEventCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `displayed` field."""
+  displayed: Boolean
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `processedId` field."""
+  processedId: BigInt
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+}
+
+"""A connection to a list of `ConcreteEvent` values."""
+type ConcreteEventsConnection {
+  """A list of `ConcreteEvent` objects."""
+  nodes: [ConcreteEvent]!
+
+  """
+  A list of edges which contains the `ConcreteEvent` and cursor to aid in pagination.
+  """
+  edges: [ConcreteEventsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `ConcreteEvent` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `ConcreteEvent` edge in the connection."""
+type ConcreteEventsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `ConcreteEvent` at the end of the edge."""
+  node: ConcreteEvent
+}
+
+"""Methods to use when ordering `ConcreteEvent`."""
+enum ConcreteEventsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  DISPLAYED_ASC
+  DISPLAYED_DESC
+  URL_ASC
+  URL_DESC
+  PROCESSED_ID_ASC
+  PROCESSED_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  STATUS_ASC
+  STATUS_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type ConcreteMarket implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  cashoutAvailable: Boolean!
+  eachwayAvailable: Boolean!
+  firstFourAvailable: Boolean!
+  forecastAvailable: Boolean!
+  guaranteedPriceAvailable: Boolean!
+  placeAvailable: Boolean!
+  quinellaAvailable: Boolean!
+  tricastAvailable: Boolean!
+  url: String
+  concreteEventId: BigInt!
+  processedId: BigInt!
+  displayOrder: Int!
+  isDefault: Boolean!
+  feedSupplier: FeedSupplierEnum!
+  betInPlay: Boolean!
+  betTill: Datetime
+  bettingStatus: BettingStatusEnum!
+  status: StatusEnum!
+
+  """
+  Reads a single `ConcreteEvent` that is related to this `ConcreteMarket`.
+  """
+  concreteEvent: ConcreteEvent
+
+  """Reads a single `Market` that is related to this `ConcreteMarket`."""
+  processed: Market
+
+  """
+  Reads a single `MetaConcreteMarket` that is related to this `ConcreteMarket`.
+  """
+  metaConcreteMarketById: MetaConcreteMarket
+
+  """Reads and enables pagination through a set of `MetaConcreteMarket`."""
+  metaConcreteMarketsById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteMarket`."""
+    orderBy: [MetaConcreteMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteMarketCondition
+  ): MetaConcreteMarketsConnection! @deprecated(reason: "Please use metaConcreteMarketById instead")
+
+  """Reads and enables pagination through a set of `ConcreteOutcome`."""
+  concreteOutcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteOutcome`."""
+    orderBy: [ConcreteOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteOutcomeCondition
+  ): ConcreteOutcomesConnection!
+}
+
+"""
+A condition to be used against `ConcreteMarket` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input ConcreteMarketCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `cashoutAvailable` field."""
+  cashoutAvailable: Boolean
+
+  """Checks for equality with the object’s `eachwayAvailable` field."""
+  eachwayAvailable: Boolean
+
+  """Checks for equality with the object’s `firstFourAvailable` field."""
+  firstFourAvailable: Boolean
+
+  """Checks for equality with the object’s `forecastAvailable` field."""
+  forecastAvailable: Boolean
+
+  """
+  Checks for equality with the object’s `guaranteedPriceAvailable` field.
+  """
+  guaranteedPriceAvailable: Boolean
+
+  """Checks for equality with the object’s `placeAvailable` field."""
+  placeAvailable: Boolean
+
+  """Checks for equality with the object’s `quinellaAvailable` field."""
+  quinellaAvailable: Boolean
+
+  """Checks for equality with the object’s `tricastAvailable` field."""
+  tricastAvailable: Boolean
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `concreteEventId` field."""
+  concreteEventId: BigInt
+
+  """Checks for equality with the object’s `processedId` field."""
+  processedId: BigInt
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `isDefault` field."""
+  isDefault: Boolean
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `betInPlay` field."""
+  betInPlay: Boolean
+
+  """Checks for equality with the object’s `betTill` field."""
+  betTill: Datetime
+
+  """Checks for equality with the object’s `bettingStatus` field."""
+  bettingStatus: BettingStatusEnum
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+}
+
+"""A connection to a list of `ConcreteMarket` values."""
+type ConcreteMarketsConnection {
+  """A list of `ConcreteMarket` objects."""
+  nodes: [ConcreteMarket]!
+
+  """
+  A list of edges which contains the `ConcreteMarket` and cursor to aid in pagination.
+  """
+  edges: [ConcreteMarketsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `ConcreteMarket` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `ConcreteMarket` edge in the connection."""
+type ConcreteMarketsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `ConcreteMarket` at the end of the edge."""
+  node: ConcreteMarket
+}
+
+"""Methods to use when ordering `ConcreteMarket`."""
+enum ConcreteMarketsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CASHOUT_AVAILABLE_ASC
+  CASHOUT_AVAILABLE_DESC
+  EACHWAY_AVAILABLE_ASC
+  EACHWAY_AVAILABLE_DESC
+  FIRST_FOUR_AVAILABLE_ASC
+  FIRST_FOUR_AVAILABLE_DESC
+  FORECAST_AVAILABLE_ASC
+  FORECAST_AVAILABLE_DESC
+  GUARANTEED_PRICE_AVAILABLE_ASC
+  GUARANTEED_PRICE_AVAILABLE_DESC
+  PLACE_AVAILABLE_ASC
+  PLACE_AVAILABLE_DESC
+  QUINELLA_AVAILABLE_ASC
+  QUINELLA_AVAILABLE_DESC
+  TRICAST_AVAILABLE_ASC
+  TRICAST_AVAILABLE_DESC
+  URL_ASC
+  URL_DESC
+  CONCRETE_EVENT_ID_ASC
+  CONCRETE_EVENT_ID_DESC
+  PROCESSED_ID_ASC
+  PROCESSED_ID_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  IS_DEFAULT_ASC
+  IS_DEFAULT_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  BET_IN_PLAY_ASC
+  BET_IN_PLAY_DESC
+  BET_TILL_ASC
+  BET_TILL_DESC
+  BETTING_STATUS_ASC
+  BETTING_STATUS_DESC
+  STATUS_ASC
+  STATUS_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type ConcreteOutcome implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  odds: String
+  oddsDecimal: Float
+  runnerNumber: Int
+  handicap: String
+  displayOrder: Int!
+  isHome: Boolean!
+  concreteMarketId: BigInt!
+  processedId: BigInt!
+  feedSupplier: FeedSupplierEnum!
+  livePriceAvailable: Boolean!
+  startingPriceAvailable: Boolean!
+  status: StatusEnum!
+
+  """
+  Reads a single `ConcreteMarket` that is related to this `ConcreteOutcome`.
+  """
+  concreteMarket: ConcreteMarket
+
+  """Reads a single `Outcome` that is related to this `ConcreteOutcome`."""
+  processed: Outcome
+
+  """
+  Reads a single `MetaConcreteOutcome` that is related to this `ConcreteOutcome`.
+  """
+  metaConcreteOutcomeById: MetaConcreteOutcome
+
+  """Reads and enables pagination through a set of `MetaConcreteOutcome`."""
+  metaConcreteOutcomesById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteOutcome`."""
+    orderBy: [MetaConcreteOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteOutcomeCondition
+  ): MetaConcreteOutcomesConnection! @deprecated(reason: "Please use metaConcreteOutcomeById instead")
+}
+
+"""
+A condition to be used against `ConcreteOutcome` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input ConcreteOutcomeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `odds` field."""
+  odds: String
+
+  """Checks for equality with the object’s `oddsDecimal` field."""
+  oddsDecimal: Float
+
+  """Checks for equality with the object’s `runnerNumber` field."""
+  runnerNumber: Int
+
+  """Checks for equality with the object’s `handicap` field."""
+  handicap: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `isHome` field."""
+  isHome: Boolean
+
+  """Checks for equality with the object’s `concreteMarketId` field."""
+  concreteMarketId: BigInt
+
+  """Checks for equality with the object’s `processedId` field."""
+  processedId: BigInt
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `livePriceAvailable` field."""
+  livePriceAvailable: Boolean
+
+  """Checks for equality with the object’s `startingPriceAvailable` field."""
+  startingPriceAvailable: Boolean
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+}
+
+"""A connection to a list of `ConcreteOutcome` values."""
+type ConcreteOutcomesConnection {
+  """A list of `ConcreteOutcome` objects."""
+  nodes: [ConcreteOutcome]!
+
+  """
+  A list of edges which contains the `ConcreteOutcome` and cursor to aid in pagination.
+  """
+  edges: [ConcreteOutcomesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `ConcreteOutcome` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `ConcreteOutcome` edge in the connection."""
+type ConcreteOutcomesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `ConcreteOutcome` at the end of the edge."""
+  node: ConcreteOutcome
+}
+
+"""Methods to use when ordering `ConcreteOutcome`."""
+enum ConcreteOutcomesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  ODDS_ASC
+  ODDS_DESC
+  ODDS_DECIMAL_ASC
+  ODDS_DECIMAL_DESC
+  RUNNER_NUMBER_ASC
+  RUNNER_NUMBER_DESC
+  HANDICAP_ASC
+  HANDICAP_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  IS_HOME_ASC
+  IS_HOME_DESC
+  CONCRETE_MARKET_ID_ASC
+  CONCRETE_MARKET_ID_DESC
+  PROCESSED_ID_ASC
+  PROCESSED_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  LIVE_PRICE_AVAILABLE_ASC
+  LIVE_PRICE_AVAILABLE_DESC
+  STARTING_PRICE_AVAILABLE_ASC
+  STARTING_PRICE_AVAILABLE_DESC
+  STATUS_ASC
+  STATUS_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""All input for the `createEntityCategory1` mutation."""
+input CreateEntityCategory1Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+}
+
+"""The output of our `createEntityCategory1` mutation."""
+type CreateEntityCategory1Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  category1: Category1
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Category1`. May be used by Relay 1."""
+  category1Edge(
+    """The method to use when ordering `Category1`."""
+    orderBy: [Category1sOrderBy!] = [PRIMARY_KEY_ASC]
+  ): Category1sEdge
+}
+
+"""All input for the `createEntityCategory2` mutation."""
+input CreateEntityCategory2Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+}
+
+"""The output of our `createEntityCategory2` mutation."""
+type CreateEntityCategory2Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  category2: Category2
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Category1` that is related to this `Category2`."""
+  category1: Category1
+
+  """An edge for our `Category2`. May be used by Relay 1."""
+  category2Edge(
+    """The method to use when ordering `Category2`."""
+    orderBy: [Category2sOrderBy!] = [PRIMARY_KEY_ASC]
+  ): Category2sEdge
+}
+
+"""All input for the `createEntityCategory3` mutation."""
+input CreateEntityCategory3Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+}
+
+"""The output of our `createEntityCategory3` mutation."""
+type CreateEntityCategory3Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  category3: Category3
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Category2` that is related to this `Category3`."""
+  category2: Category2
+
+  """An edge for our `Category3`. May be used by Relay 1."""
+  category3Edge(
+    """The method to use when ordering `Category3`."""
+    orderBy: [Category3sOrderBy!] = [PRIMARY_KEY_ASC]
+  ): Category3sEdge
+}
+
+"""All input for the `createEntityEvent` mutation."""
+input CreateEntityEventInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+  action: String
+}
+
+"""The output of our `createEntityEvent` mutation."""
+type CreateEntityEventPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  event: Event
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """Reads a single `Category3` that is related to this `Event`."""
+  category3: Category3
+
+  """An edge for our `Event`. May be used by Relay 1."""
+  eventEdge(
+    """The method to use when ordering `Event`."""
+    orderBy: [EventsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): EventsEdge
+}
+
+"""All input for the `createEntityMarketCollection` mutation."""
+input CreateEntityMarketCollectionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+}
+
+"""The output of our `createEntityMarketCollection` mutation."""
+type CreateEntityMarketCollectionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  marketCollection: MarketCollection
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `MarketCollection`. May be used by Relay 1."""
+  marketCollectionEdge(
+    """The method to use when ordering `MarketCollection`."""
+    orderBy: [MarketCollectionsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MarketCollectionsEdge
+}
+
+"""All input for the `createEntityMarket` mutation."""
+input CreateEntityMarketInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+  action: String
+}
+
+"""The output of our `createEntityMarket` mutation."""
+type CreateEntityMarketPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  market: Market
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Market`. May be used by Relay 1."""
+  marketEdge(
+    """The method to use when ordering `Market`."""
+    orderBy: [MarketsOrderBy!] = [PRIMARY_KEY_ASC]
+  ): MarketsEdge
+}
+
+"""All input for the `createEntityOutcome` mutation."""
+input CreateEntityOutcomeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+  metaParam: MetaInput
+  action: String
+}
+
+"""The output of our `createEntityOutcome` mutation."""
+type CreateEntityOutcomePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  outcome: Outcome
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+
+  """An edge for our `Outcome`. May be used by Relay 1."""
+  outcomeEdge(
+    """The method to use when ordering `Outcome`."""
+    orderBy: [OutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+  ): OutcomesEdge
+}
+
+type CrunchTmp {
+  uniqueAppend: String
+  action: String
+  suggestRenameRules: Boolean
+}
+
+"""A location in a connection that can be used for resuming pagination."""
+scalar Cursor
+
+"""
+A point in time as described by the [ISO
+8601](https://en.wikipedia.org/wiki/ISO_8601) standard. May or may not include a timezone.
+"""
+scalar Datetime
+
+type Dimensions {
+  width: Int!
+  height: Int!
+  scale: Int!
+  fontScale: Int!
+  lessThan: DimensionsSet!
+  greaterThan: DimensionsSet!
+  is: DimensionsSet!
+  orientation: Orientation!
+}
+
+input DimensionsInput {
+  width: Int!
+  height: Int!
+  scale: Int!
+  fontScale: Int!
+  lessThan: DimensionsSetInput!
+  greaterThan: DimensionsSetInput!
+  is: DimensionsSetInput!
+  orientation: Orientation!
+}
+
+type DimensionsSet {
+  xs: Boolean!
+  sm: Boolean!
+  md: Boolean!
+  lg: Boolean!
+  xl: Boolean!
+  xxl: Boolean!
+}
+
+input DimensionsSetInput {
+  xs: Boolean!
+  sm: Boolean!
+  md: Boolean!
+  lg: Boolean!
+  xl: Boolean!
+  xxl: Boolean!
+}
+
+enum EntityNameEnum {
+  CATEGORY1
+  CATEGORY2
+  CATEGORY3
+  EVENT
+  MARKET
+  OUTCOME
+  MARKETCOLLECTION
+}
+
+type Event implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  eventDate: Datetime!
+  type: EventTypeEnum!
+  category3Id: BigInt!
+  displayOrder: Int!
+
+  """Reads a single `Category3` that is related to this `Event`."""
+  category3: Category3
+
+  """Reads a single `MetaEvent` that is related to this `Event`."""
+  metaEventById: MetaEvent
+
+  """Reads and enables pagination through a set of `MetaEvent`."""
+  metaEventsById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaEvent`."""
+    orderBy: [MetaEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaEventCondition
+  ): MetaEventsConnection! @deprecated(reason: "Please use metaEventById instead")
+
+  """Reads and enables pagination through a set of `ConcreteEvent`."""
+  concreteEventsByProcessedId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteEvent`."""
+    orderBy: [ConcreteEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteEventCondition
+  ): ConcreteEventsConnection!
+}
+
+"""
+A condition to be used against `Event` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input EventCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `eventDate` field."""
+  eventDate: Datetime
+
+  """Checks for equality with the object’s `type` field."""
+  type: EventTypeEnum
+
+  """Checks for equality with the object’s `category3Id` field."""
+  category3Id: BigInt
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+}
+
+"""A connection to a list of `Event` values."""
+type EventsConnection {
+  """A list of `Event` objects."""
+  nodes: [Event]!
+
+  """
+  A list of edges which contains the `Event` and cursor to aid in pagination.
+  """
+  edges: [EventsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Event` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Event` edge in the connection."""
+type EventsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Event` at the end of the edge."""
+  node: Event
+}
+
+"""Methods to use when ordering `Event`."""
+enum EventsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  EVENT_DATE_ASC
+  EVENT_DATE_DESC
+  TYPE_ASC
+  TYPE_DESC
+  CATEGORY3_ID_ASC
+  CATEGORY3_ID_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+enum EventTypeEnum {
+  MATCH_2_TEAMS
+  OUTRIGHT
+}
+
+type EventView implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  displayed: Boolean!
+  url: String!
+  feedSupplier: FeedSupplierEnum!
+  status: StatusEnum!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  eventDate: Datetime!
+  type: EventTypeEnum!
+  category3Id: BigInt!
+  displayOrder: Int!
+
+  """Reads and enables pagination through a set of `MarketView`."""
+  markets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketView`."""
+    orderBy: [MarketViewsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketViewCondition
+  ): MarketViewsConnection!
+}
+
+"""
+A condition to be used against `EventView` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input EventViewCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `displayed` field."""
+  displayed: Boolean
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `eventDate` field."""
+  eventDate: Datetime
+
+  """Checks for equality with the object’s `type` field."""
+  type: EventTypeEnum
+
+  """Checks for equality with the object’s `category3Id` field."""
+  category3Id: BigInt
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+}
+
+"""A connection to a list of `EventView` values."""
+type EventViewsConnection {
+  """A list of `EventView` objects."""
+  nodes: [EventView]!
+
+  """
+  A list of edges which contains the `EventView` and cursor to aid in pagination.
+  """
+  edges: [EventViewsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `EventView` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `EventView` edge in the connection."""
+type EventViewsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `EventView` at the end of the edge."""
+  node: EventView
+}
+
+"""Methods to use when ordering `EventView`."""
+enum EventViewsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  DISPLAYED_ASC
+  DISPLAYED_DESC
+  URL_ASC
+  URL_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  STATUS_ASC
+  STATUS_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  EVENT_DATE_ASC
+  EVENT_DATE_DESC
+  TYPE_ASC
+  TYPE_DESC
+  CATEGORY3_ID_ASC
+  CATEGORY3_ID_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""All input for the `extractCrunchTmp` mutation."""
+input ExtractCrunchTmpInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  jsonParam: JSON
+}
+
+"""The output of our `extractCrunchTmp` mutation."""
+type ExtractCrunchTmpPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  crunchTmp: CrunchTmp
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `extractFields` mutation."""
+input ExtractFieldsInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  fieldsType: String
+  jsonParam: JSON
+}
+
+"""The output of our `extractFields` mutation."""
+type ExtractFieldsPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  string: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+enum FeedSupplierEnum {
+  coral
+  sky
+  boylesports
+  test1
+  test2
+  test3
+  test4
+  test5
+  test6
+  test7
+  test8
+  test9
+  test10
+}
+
+"""
+A JavaScript object encoded in the JSON format as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+enum LayoutSize {
+  SMALL
+  LARGE
+}
+
+type Market implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+
+  """Reads a single `MetaMarket` that is related to this `Market`."""
+  metaMarketById: MetaMarket
+
+  """Reads and enables pagination through a set of `MetaMarket`."""
+  metaMarketsById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaMarket`."""
+    orderBy: [MetaMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaMarketCondition
+  ): MetaMarketsConnection! @deprecated(reason: "Please use metaMarketById instead")
+
+  """Reads and enables pagination through a set of `ConcreteMarket`."""
+  concreteMarketsByProcessedId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteMarket`."""
+    orderBy: [ConcreteMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteMarketCondition
+  ): ConcreteMarketsConnection!
+
+  """
+  Reads and enables pagination through a set of `MarketCollectionJoinMarket`.
+  """
+  marketCollectionJoinMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketCollectionJoinMarket`."""
+    orderBy: [MarketCollectionJoinMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketCollectionJoinMarketCondition
+  ): MarketCollectionJoinMarketsConnection!
+}
+
+type MarketCollection implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+  displayOrder: Int!
+
+  """
+  Reads a single `MetaMarketCollection` that is related to this `MarketCollection`.
+  """
+  metaMarketCollectionById: MetaMarketCollection
+
+  """Reads and enables pagination through a set of `MetaMarketCollection`."""
+  metaMarketCollectionsById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaMarketCollection`."""
+    orderBy: [MetaMarketCollectionsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaMarketCollectionCondition
+  ): MetaMarketCollectionsConnection! @deprecated(reason: "Please use metaMarketCollectionById instead")
+
+  """
+  Reads and enables pagination through a set of `MarketCollectionJoinMarket`.
+  """
+  marketCollectionJoinMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketCollectionJoinMarket`."""
+    orderBy: [MarketCollectionJoinMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketCollectionJoinMarketCondition
+  ): MarketCollectionJoinMarketsConnection!
+}
+
+"""
+A condition to be used against `MarketCollection` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MarketCollectionCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+}
+
+type MarketCollectionJoinMarket implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  marketCollectionId: BigInt!
+  marketId: BigInt!
+
+  """
+  Reads a single `MarketCollection` that is related to this `MarketCollectionJoinMarket`.
+  """
+  marketCollection: MarketCollection
+
+  """
+  Reads a single `Market` that is related to this `MarketCollectionJoinMarket`.
+  """
+  market: Market
+}
+
+"""
+A condition to be used against `MarketCollectionJoinMarket` object types. All
+fields are tested for equality and combined with a logical ‘and.’
+"""
+input MarketCollectionJoinMarketCondition {
+  """Checks for equality with the object’s `marketCollectionId` field."""
+  marketCollectionId: BigInt
+
+  """Checks for equality with the object’s `marketId` field."""
+  marketId: BigInt
+}
+
+"""A connection to a list of `MarketCollectionJoinMarket` values."""
+type MarketCollectionJoinMarketsConnection {
+  """A list of `MarketCollectionJoinMarket` objects."""
+  nodes: [MarketCollectionJoinMarket]!
+
+  """
+  A list of edges which contains the `MarketCollectionJoinMarket` and cursor to aid in pagination.
+  """
+  edges: [MarketCollectionJoinMarketsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MarketCollectionJoinMarket` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MarketCollectionJoinMarket` edge in the connection."""
+type MarketCollectionJoinMarketsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MarketCollectionJoinMarket` at the end of the edge."""
+  node: MarketCollectionJoinMarket
+}
+
+"""Methods to use when ordering `MarketCollectionJoinMarket`."""
+enum MarketCollectionJoinMarketsOrderBy {
+  NATURAL
+  MARKET_COLLECTION_ID_ASC
+  MARKET_COLLECTION_ID_DESC
+  MARKET_ID_ASC
+  MARKET_ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""A connection to a list of `MarketCollection` values."""
+type MarketCollectionsConnection {
+  """A list of `MarketCollection` objects."""
+  nodes: [MarketCollection]!
+
+  """
+  A list of edges which contains the `MarketCollection` and cursor to aid in pagination.
+  """
+  edges: [MarketCollectionsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MarketCollection` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MarketCollection` edge in the connection."""
+type MarketCollectionsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MarketCollection` at the end of the edge."""
+  node: MarketCollection
+}
+
+"""Methods to use when ordering `MarketCollection`."""
+enum MarketCollectionsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `Market` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input MarketCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+}
+
+"""A connection to a list of `Market` values."""
+type MarketsConnection {
+  """A list of `Market` objects."""
+  nodes: [Market]!
+
+  """
+  A list of edges which contains the `Market` and cursor to aid in pagination.
+  """
+  edges: [MarketsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Market` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Market` edge in the connection."""
+type MarketsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Market` at the end of the edge."""
+  node: Market
+}
+
+"""Methods to use when ordering `Market`."""
+enum MarketsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MarketView implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  cashoutAvailable: Boolean!
+  eachwayAvailable: Boolean!
+  firstFourAvailable: Boolean!
+  forecastAvailable: Boolean!
+  guaranteedPriceAvailable: Boolean!
+  placeAvailable: Boolean!
+  quinellaAvailable: Boolean!
+  tricastAvailable: Boolean!
+  eventId: BigInt!
+  displayOrder: Int!
+  isDefault: Boolean!
+  feedSupplier: FeedSupplierEnum!
+  betInPlay: Boolean!
+  betTill: Datetime!
+  bettingStatus: BettingStatusEnum!
+  status: StatusEnum!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+
+  """Reads a single `EventView` that is related to this `MarketView`."""
+  event: EventView
+
+  """Reads and enables pagination through a set of `OutcomeView`."""
+  outcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `OutcomeView`."""
+    orderBy: [OutcomeViewsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: OutcomeViewCondition
+  ): OutcomeViewsConnection!
+}
+
+"""
+A condition to be used against `MarketView` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MarketViewCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `cashoutAvailable` field."""
+  cashoutAvailable: Boolean
+
+  """Checks for equality with the object’s `eachwayAvailable` field."""
+  eachwayAvailable: Boolean
+
+  """Checks for equality with the object’s `firstFourAvailable` field."""
+  firstFourAvailable: Boolean
+
+  """Checks for equality with the object’s `forecastAvailable` field."""
+  forecastAvailable: Boolean
+
+  """
+  Checks for equality with the object’s `guaranteedPriceAvailable` field.
+  """
+  guaranteedPriceAvailable: Boolean
+
+  """Checks for equality with the object’s `placeAvailable` field."""
+  placeAvailable: Boolean
+
+  """Checks for equality with the object’s `quinellaAvailable` field."""
+  quinellaAvailable: Boolean
+
+  """Checks for equality with the object’s `tricastAvailable` field."""
+  tricastAvailable: Boolean
+
+  """Checks for equality with the object’s `eventId` field."""
+  eventId: BigInt
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `isDefault` field."""
+  isDefault: Boolean
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `betInPlay` field."""
+  betInPlay: Boolean
+
+  """Checks for equality with the object’s `betTill` field."""
+  betTill: Datetime
+
+  """Checks for equality with the object’s `bettingStatus` field."""
+  bettingStatus: BettingStatusEnum
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+}
+
+"""A connection to a list of `MarketView` values."""
+type MarketViewsConnection {
+  """A list of `MarketView` objects."""
+  nodes: [MarketView]!
+
+  """
+  A list of edges which contains the `MarketView` and cursor to aid in pagination.
+  """
+  edges: [MarketViewsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MarketView` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MarketView` edge in the connection."""
+type MarketViewsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MarketView` at the end of the edge."""
+  node: MarketView
+}
+
+"""Methods to use when ordering `MarketView`."""
+enum MarketViewsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  CASHOUT_AVAILABLE_ASC
+  CASHOUT_AVAILABLE_DESC
+  EACHWAY_AVAILABLE_ASC
+  EACHWAY_AVAILABLE_DESC
+  FIRST_FOUR_AVAILABLE_ASC
+  FIRST_FOUR_AVAILABLE_DESC
+  FORECAST_AVAILABLE_ASC
+  FORECAST_AVAILABLE_DESC
+  GUARANTEED_PRICE_AVAILABLE_ASC
+  GUARANTEED_PRICE_AVAILABLE_DESC
+  PLACE_AVAILABLE_ASC
+  PLACE_AVAILABLE_DESC
+  QUINELLA_AVAILABLE_ASC
+  QUINELLA_AVAILABLE_DESC
+  TRICAST_AVAILABLE_ASC
+  TRICAST_AVAILABLE_DESC
+  EVENT_ID_ASC
+  EVENT_ID_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  IS_DEFAULT_ASC
+  IS_DEFAULT_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  BET_IN_PLAY_ASC
+  BET_IN_PLAY_DESC
+  BET_TILL_ASC
+  BET_TILL_DESC
+  BETTING_STATUS_ASC
+  BETTING_STATUS_DESC
+  STATUS_ASC
+  STATUS_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Meta {
+  id: BigInt
+  name: String
+  canonicalisedName: String
+  canonicalisedNameUnique: String
+  feedSupplier: String
+  runId: UUID
+  url: String
+}
+
+type MetaCategory1 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Category1` that is related to this `MetaCategory1`."""
+  category1ById: Category1
+}
+
+"""
+A condition to be used against `MetaCategory1` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MetaCategory1Condition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaCategory1` values."""
+type MetaCategory1sConnection {
+  """A list of `MetaCategory1` objects."""
+  nodes: [MetaCategory1]!
+
+  """
+  A list of edges which contains the `MetaCategory1` and cursor to aid in pagination.
+  """
+  edges: [MetaCategory1sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaCategory1` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaCategory1` edge in the connection."""
+type MetaCategory1sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaCategory1` at the end of the edge."""
+  node: MetaCategory1
+}
+
+"""Methods to use when ordering `MetaCategory1`."""
+enum MetaCategory1sOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaCategory2 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Category2` that is related to this `MetaCategory2`."""
+  category2ById: Category2
+}
+
+"""
+A condition to be used against `MetaCategory2` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MetaCategory2Condition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaCategory2` values."""
+type MetaCategory2sConnection {
+  """A list of `MetaCategory2` objects."""
+  nodes: [MetaCategory2]!
+
+  """
+  A list of edges which contains the `MetaCategory2` and cursor to aid in pagination.
+  """
+  edges: [MetaCategory2sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaCategory2` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaCategory2` edge in the connection."""
+type MetaCategory2sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaCategory2` at the end of the edge."""
+  node: MetaCategory2
+}
+
+"""Methods to use when ordering `MetaCategory2`."""
+enum MetaCategory2sOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaCategory3 implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Category3` that is related to this `MetaCategory3`."""
+  category3ById: Category3
+}
+
+"""
+A condition to be used against `MetaCategory3` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MetaCategory3Condition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaCategory3` values."""
+type MetaCategory3sConnection {
+  """A list of `MetaCategory3` objects."""
+  nodes: [MetaCategory3]!
+
+  """
+  A list of edges which contains the `MetaCategory3` and cursor to aid in pagination.
+  """
+  edges: [MetaCategory3sEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaCategory3` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaCategory3` edge in the connection."""
+type MetaCategory3sEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaCategory3` at the end of the edge."""
+  node: MetaCategory3
+}
+
+"""Methods to use when ordering `MetaCategory3`."""
+enum MetaCategory3sOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaConcreteEvent implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """
+  Reads a single `ConcreteEvent` that is related to this `MetaConcreteEvent`.
+  """
+  concreteEventById: ConcreteEvent
+}
+
+"""
+A condition to be used against `MetaConcreteEvent` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MetaConcreteEventCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaConcreteEvent` values."""
+type MetaConcreteEventsConnection {
+  """A list of `MetaConcreteEvent` objects."""
+  nodes: [MetaConcreteEvent]!
+
+  """
+  A list of edges which contains the `MetaConcreteEvent` and cursor to aid in pagination.
+  """
+  edges: [MetaConcreteEventsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MetaConcreteEvent` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MetaConcreteEvent` edge in the connection."""
+type MetaConcreteEventsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaConcreteEvent` at the end of the edge."""
+  node: MetaConcreteEvent
+}
+
+"""Methods to use when ordering `MetaConcreteEvent`."""
+enum MetaConcreteEventsOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaConcreteMarket implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """
+  Reads a single `ConcreteMarket` that is related to this `MetaConcreteMarket`.
+  """
+  concreteMarketById: ConcreteMarket
+}
+
+"""
+A condition to be used against `MetaConcreteMarket` object types. All fields are
+tested for equality and combined with a logical ‘and.’
+"""
+input MetaConcreteMarketCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaConcreteMarket` values."""
+type MetaConcreteMarketsConnection {
+  """A list of `MetaConcreteMarket` objects."""
+  nodes: [MetaConcreteMarket]!
+
+  """
+  A list of edges which contains the `MetaConcreteMarket` and cursor to aid in pagination.
+  """
+  edges: [MetaConcreteMarketsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MetaConcreteMarket` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MetaConcreteMarket` edge in the connection."""
+type MetaConcreteMarketsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaConcreteMarket` at the end of the edge."""
+  node: MetaConcreteMarket
+}
+
+"""Methods to use when ordering `MetaConcreteMarket`."""
+enum MetaConcreteMarketsOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaConcreteOutcome implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """
+  Reads a single `ConcreteOutcome` that is related to this `MetaConcreteOutcome`.
+  """
+  concreteOutcomeById: ConcreteOutcome
+}
+
+"""
+A condition to be used against `MetaConcreteOutcome` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input MetaConcreteOutcomeCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaConcreteOutcome` values."""
+type MetaConcreteOutcomesConnection {
+  """A list of `MetaConcreteOutcome` objects."""
+  nodes: [MetaConcreteOutcome]!
+
+  """
+  A list of edges which contains the `MetaConcreteOutcome` and cursor to aid in pagination.
+  """
+  edges: [MetaConcreteOutcomesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MetaConcreteOutcome` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MetaConcreteOutcome` edge in the connection."""
+type MetaConcreteOutcomesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaConcreteOutcome` at the end of the edge."""
+  node: MetaConcreteOutcome
+}
+
+"""Methods to use when ordering `MetaConcreteOutcome`."""
+enum MetaConcreteOutcomesOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaEvent implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Event` that is related to this `MetaEvent`."""
+  eventById: Event
+}
+
+"""
+A condition to be used against `MetaEvent` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MetaEventCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaEvent` values."""
+type MetaEventsConnection {
+  """A list of `MetaEvent` objects."""
+  nodes: [MetaEvent]!
+
+  """
+  A list of edges which contains the `MetaEvent` and cursor to aid in pagination.
+  """
+  edges: [MetaEventsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaEvent` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaEvent` edge in the connection."""
+type MetaEventsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaEvent` at the end of the edge."""
+  node: MetaEvent
+}
+
+"""Methods to use when ordering `MetaEvent`."""
+enum MetaEventsOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""An input for mutations affecting `Meta`"""
+input MetaInput {
+  id: BigInt
+  name: String
+  canonicalisedName: String
+  canonicalisedNameUnique: String
+  feedSupplier: String
+  runId: UUID
+  url: String
+}
+
+type MetaMarket implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Market` that is related to this `MetaMarket`."""
+  marketById: Market
+}
+
+type MetaMarketCollection implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """
+  Reads a single `MarketCollection` that is related to this `MetaMarketCollection`.
+  """
+  marketCollectionById: MarketCollection
+}
+
+"""
+A condition to be used against `MetaMarketCollection` object types. All fields
+are tested for equality and combined with a logical ‘and.’
+"""
+input MetaMarketCollectionCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaMarketCollection` values."""
+type MetaMarketCollectionsConnection {
+  """A list of `MetaMarketCollection` objects."""
+  nodes: [MetaMarketCollection]!
+
+  """
+  A list of edges which contains the `MetaMarketCollection` and cursor to aid in pagination.
+  """
+  edges: [MetaMarketCollectionsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """
+  The count of *all* `MetaMarketCollection` you could get from the connection.
+  """
+  totalCount: Int!
+}
+
+"""A `MetaMarketCollection` edge in the connection."""
+type MetaMarketCollectionsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaMarketCollection` at the end of the edge."""
+  node: MetaMarketCollection
+}
+
+"""Methods to use when ordering `MetaMarketCollection`."""
+enum MetaMarketCollectionsOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+A condition to be used against `MetaMarket` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MetaMarketCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaMarket` values."""
+type MetaMarketsConnection {
+  """A list of `MetaMarket` objects."""
+  nodes: [MetaMarket]!
+
+  """
+  A list of edges which contains the `MetaMarket` and cursor to aid in pagination.
+  """
+  edges: [MetaMarketsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaMarket` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaMarket` edge in the connection."""
+type MetaMarketsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaMarket` at the end of the edge."""
+  node: MetaMarket
+}
+
+"""Methods to use when ordering `MetaMarket`."""
+enum MetaMarketsOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type MetaOutcome implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  feedId: BigInt!
+  runId: UUID!
+  feedSupplier: FeedSupplierEnum!
+  url: String!
+  id: BigInt!
+
+  """Reads a single `Outcome` that is related to this `MetaOutcome`."""
+  outcomeById: Outcome
+}
+
+"""
+A condition to be used against `MetaOutcome` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input MetaOutcomeCondition {
+  """Checks for equality with the object’s `feedId` field."""
+  feedId: BigInt
+
+  """Checks for equality with the object’s `runId` field."""
+  runId: UUID
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `url` field."""
+  url: String
+
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+}
+
+"""A connection to a list of `MetaOutcome` values."""
+type MetaOutcomesConnection {
+  """A list of `MetaOutcome` objects."""
+  nodes: [MetaOutcome]!
+
+  """
+  A list of edges which contains the `MetaOutcome` and cursor to aid in pagination.
+  """
+  edges: [MetaOutcomesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `MetaOutcome` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `MetaOutcome` edge in the connection."""
+type MetaOutcomesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `MetaOutcome` at the end of the edge."""
+  node: MetaOutcome
+}
+
+"""Methods to use when ordering `MetaOutcome`."""
+enum MetaOutcomesOrderBy {
+  NATURAL
+  FEED_ID_ASC
+  FEED_ID_DESC
+  RUN_ID_ASC
+  RUN_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  URL_ASC
+  URL_DESC
+  ID_ASC
+  ID_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""
+The root mutation type which contains root level fields which mutate data.
+"""
+type Mutation {
+  applyCanonicalise(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ApplyCanonicaliseInput!
+  ): ApplyCanonicalisePayload
+  applyRenaming(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ApplyRenamingInput!
+  ): ApplyRenamingPayload
+  createEntityCategory1(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityCategory1Input!
+  ): CreateEntityCategory1Payload
+  createEntityCategory2(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityCategory2Input!
+  ): CreateEntityCategory2Payload
+  createEntityCategory3(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityCategory3Input!
+  ): CreateEntityCategory3Payload
+  createEntityEvent(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityEventInput!
+  ): CreateEntityEventPayload
+  createEntityMarket(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityMarketInput!
+  ): CreateEntityMarketPayload
+  createEntityMarketCollection(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityMarketCollectionInput!
+  ): CreateEntityMarketCollectionPayload
+  createEntityOutcome(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: CreateEntityOutcomeInput!
+  ): CreateEntityOutcomePayload
+  extractCrunchTmp(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ExtractCrunchTmpInput!
+  ): ExtractCrunchTmpPayload
+  extractFields(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ExtractFieldsInput!
+  ): ExtractFieldsPayload
+  processEntityCategory1(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityCategory1Input!
+  ): ProcessEntityCategory1Payload
+  processEntityCategory2(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityCategory2Input!
+  ): ProcessEntityCategory2Payload
+  processEntityCategory3(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityCategory3Input!
+  ): ProcessEntityCategory3Payload
+  processEntityEvent(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityEventInput!
+  ): ProcessEntityEventPayload
+  processEntityMarket(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityMarketInput!
+  ): ProcessEntityMarketPayload
+  processEntityMarketCollection(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityMarketCollectionInput!
+  ): ProcessEntityMarketCollectionPayload
+  processEntityOutcome(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessEntityOutcomeInput!
+  ): ProcessEntityOutcomePayload
+  processQueue(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: ProcessQueueInput!
+  ): ProcessQueuePayload
+  retrieveConcreteEntity(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: RetrieveConcreteEntityInput!
+  ): RetrieveConcreteEntityPayload
+  retrieveProcessedEntityByCanonicalised(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: RetrieveProcessedEntityByCanonicalisedInput!
+  ): RetrieveProcessedEntityByCanonicalisedPayload
+  retrieveProcessedEntityWithConcrete(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: RetrieveProcessedEntityWithConcreteInput!
+  ): RetrieveProcessedEntityWithConcretePayload
+  retrieveProcessedEntityWithoutConcrete(
+    """
+    The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    """
+    input: RetrieveProcessedEntityWithoutConcreteInput!
+  ): RetrieveProcessedEntityWithoutConcretePayload
+  updateDimensions(dimensionsInput: DimensionsInput!): Dimensions
+}
+
+"""An object with a globally unique `ID`."""
+interface Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+}
+
+enum Orientation {
+  PORTRAIT
+  LANDSCAPE
+}
+
+type Outcome implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+
+  """Reads a single `MetaOutcome` that is related to this `Outcome`."""
+  metaOutcomeById: MetaOutcome
+
+  """Reads and enables pagination through a set of `MetaOutcome`."""
+  metaOutcomesById(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaOutcome`."""
+    orderBy: [MetaOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaOutcomeCondition
+  ): MetaOutcomesConnection! @deprecated(reason: "Please use metaOutcomeById instead")
+
+  """Reads and enables pagination through a set of `ConcreteOutcome`."""
+  concreteOutcomesByProcessedId(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteOutcome`."""
+    orderBy: [ConcreteOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteOutcomeCondition
+  ): ConcreteOutcomesConnection!
+}
+
+"""
+A condition to be used against `Outcome` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input OutcomeCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+}
+
+"""A connection to a list of `Outcome` values."""
+type OutcomesConnection {
+  """A list of `Outcome` objects."""
+  nodes: [Outcome]!
+
+  """
+  A list of edges which contains the `Outcome` and cursor to aid in pagination.
+  """
+  edges: [OutcomesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Outcome` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Outcome` edge in the connection."""
+type OutcomesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Outcome` at the end of the edge."""
+  node: Outcome
+}
+
+"""Methods to use when ordering `Outcome`."""
+enum OutcomesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type OutcomeView implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  odds: String!
+  oddsDecimal: Float!
+  handicap: String!
+  displayOrder: Int!
+  isHome: Boolean!
+  marketId: BigInt!
+  feedSupplier: FeedSupplierEnum!
+  livePriceAvailable: Boolean!
+  startingPriceAvailable: Boolean!
+  status: StatusEnum!
+  name: String!
+  canonicalisedName: String!
+  canonicalisedNameUnique: String!
+
+  """Reads a single `MarketView` that is related to this `OutcomeView`."""
+  market: MarketView
+}
+
+"""
+A condition to be used against `OutcomeView` object types. All fields are tested
+for equality and combined with a logical ‘and.’
+"""
+input OutcomeViewCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `odds` field."""
+  odds: String
+
+  """Checks for equality with the object’s `oddsDecimal` field."""
+  oddsDecimal: Float
+
+  """Checks for equality with the object’s `handicap` field."""
+  handicap: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+
+  """Checks for equality with the object’s `isHome` field."""
+  isHome: Boolean
+
+  """Checks for equality with the object’s `marketId` field."""
+  marketId: BigInt
+
+  """Checks for equality with the object’s `feedSupplier` field."""
+  feedSupplier: FeedSupplierEnum
+
+  """Checks for equality with the object’s `livePriceAvailable` field."""
+  livePriceAvailable: Boolean
+
+  """Checks for equality with the object’s `startingPriceAvailable` field."""
+  startingPriceAvailable: Boolean
+
+  """Checks for equality with the object’s `status` field."""
+  status: StatusEnum
+
+  """Checks for equality with the object’s `name` field."""
+  name: String
+
+  """Checks for equality with the object’s `canonicalisedName` field."""
+  canonicalisedName: String
+
+  """Checks for equality with the object’s `canonicalisedNameUnique` field."""
+  canonicalisedNameUnique: String
+}
+
+"""A connection to a list of `OutcomeView` values."""
+type OutcomeViewsConnection {
+  """A list of `OutcomeView` objects."""
+  nodes: [OutcomeView]!
+
+  """
+  A list of edges which contains the `OutcomeView` and cursor to aid in pagination.
+  """
+  edges: [OutcomeViewsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `OutcomeView` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `OutcomeView` edge in the connection."""
+type OutcomeViewsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `OutcomeView` at the end of the edge."""
+  node: OutcomeView
+}
+
+"""Methods to use when ordering `OutcomeView`."""
+enum OutcomeViewsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  ODDS_ASC
+  ODDS_DESC
+  ODDS_DECIMAL_ASC
+  ODDS_DECIMAL_DESC
+  HANDICAP_ASC
+  HANDICAP_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  IS_HOME_ASC
+  IS_HOME_DESC
+  MARKET_ID_ASC
+  MARKET_ID_DESC
+  FEED_SUPPLIER_ASC
+  FEED_SUPPLIER_DESC
+  LIVE_PRICE_AVAILABLE_ASC
+  LIVE_PRICE_AVAILABLE_DESC
+  STARTING_PRICE_AVAILABLE_ASC
+  STARTING_PRICE_AVAILABLE_DESC
+  STATUS_ASC
+  STATUS_DESC
+  NAME_ASC
+  NAME_DESC
+  CANONICALISED_NAME_ASC
+  CANONICALISED_NAME_DESC
+  CANONICALISED_NAME_UNIQUE_ASC
+  CANONICALISED_NAME_UNIQUE_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: Cursor
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: Cursor
+}
+
+"""All input for the `processEntityCategory1` mutation."""
+input ProcessEntityCategory1Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityCategory1` mutation."""
+type ProcessEntityCategory1Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityCategory2` mutation."""
+input ProcessEntityCategory2Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityCategory2` mutation."""
+type ProcessEntityCategory2Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityCategory3` mutation."""
+input ProcessEntityCategory3Input {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityCategory3` mutation."""
+type ProcessEntityCategory3Payload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityEvent` mutation."""
+input ProcessEntityEventInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityEvent` mutation."""
+type ProcessEntityEventPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityMarketCollection` mutation."""
+input ProcessEntityMarketCollectionInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityMarketCollection` mutation."""
+type ProcessEntityMarketCollectionPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityMarket` mutation."""
+input ProcessEntityMarketInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityMarket` mutation."""
+type ProcessEntityMarketPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processEntityOutcome` mutation."""
+input ProcessEntityOutcomeInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  queueParam: QueueInput
+}
+
+"""The output of our `processEntityOutcome` mutation."""
+type ProcessEntityOutcomePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `processQueue` mutation."""
+input ProcessQueueInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  runid: String
+}
+
+"""The output of our `processQueue` mutation."""
+type ProcessQueuePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  integer: Int
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""The root query type which gives access points into the data universe."""
+type Query implements Node {
+  """
+  Exposes the root query type nested one level down. This is helpful for Relay 1
+  which can only query top level fields if they are in a particular form.
+  """
+  query: Query!
+
+  """
+  The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  """
+  nodeId: ID!
+
+  """Fetches an object given its globally unique `ID`."""
+  node(
+    """The globally unique `ID`."""
+    nodeId: ID!
+  ): Node
+
+  """Reads and enables pagination through a set of `_TypeormMigration`."""
+  _typeormMigrations(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `_TypeormMigration`."""
+    orderBy: [_TypeormMigrationsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: _TypeormMigrationCondition
+  ): _TypeormMigrationsConnection
+
+  """Reads and enables pagination through a set of `Category1`."""
+  category1s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category1`."""
+    orderBy: [Category1sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: Category1Condition
+  ): Category1sConnection
+
+  """Reads and enables pagination through a set of `Category2`."""
+  category2s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category2`."""
+    orderBy: [Category2sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: Category2Condition
+  ): Category2sConnection
+
+  """Reads and enables pagination through a set of `Category3`."""
+  category3s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Category3`."""
+    orderBy: [Category3sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: Category3Condition
+  ): Category3sConnection
+
+  """Reads and enables pagination through a set of `ConcreteEvent`."""
+  concreteEvents(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteEvent`."""
+    orderBy: [ConcreteEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteEventCondition
+  ): ConcreteEventsConnection
+
+  """Reads and enables pagination through a set of `ConcreteMarket`."""
+  concreteMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteMarket`."""
+    orderBy: [ConcreteMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteMarketCondition
+  ): ConcreteMarketsConnection
+
+  """Reads and enables pagination through a set of `ConcreteOutcome`."""
+  concreteOutcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `ConcreteOutcome`."""
+    orderBy: [ConcreteOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: ConcreteOutcomeCondition
+  ): ConcreteOutcomesConnection
+
+  """Reads and enables pagination through a set of `Event`."""
+  events(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Event`."""
+    orderBy: [EventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EventCondition
+  ): EventsConnection
+
+  """Reads and enables pagination through a set of `EventView`."""
+  eventViews(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `EventView`."""
+    orderBy: [EventViewsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: EventViewCondition
+  ): EventViewsConnection
+
+  """Reads and enables pagination through a set of `Market`."""
+  markets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Market`."""
+    orderBy: [MarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketCondition
+  ): MarketsConnection
+
+  """Reads and enables pagination through a set of `MarketCollection`."""
+  marketCollections(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketCollection`."""
+    orderBy: [MarketCollectionsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketCollectionCondition
+  ): MarketCollectionsConnection
+
+  """
+  Reads and enables pagination through a set of `MarketCollectionJoinMarket`.
+  """
+  marketCollectionJoinMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketCollectionJoinMarket`."""
+    orderBy: [MarketCollectionJoinMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketCollectionJoinMarketCondition
+  ): MarketCollectionJoinMarketsConnection
+
+  """Reads and enables pagination through a set of `MarketView`."""
+  marketViews(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MarketView`."""
+    orderBy: [MarketViewsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MarketViewCondition
+  ): MarketViewsConnection
+
+  """Reads and enables pagination through a set of `MetaCategory1`."""
+  metaCategory1s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory1`."""
+    orderBy: [MetaCategory1sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory1Condition
+  ): MetaCategory1sConnection
+
+  """Reads and enables pagination through a set of `MetaCategory2`."""
+  metaCategory2s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory2`."""
+    orderBy: [MetaCategory2sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory2Condition
+  ): MetaCategory2sConnection
+
+  """Reads and enables pagination through a set of `MetaCategory3`."""
+  metaCategory3s(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaCategory3`."""
+    orderBy: [MetaCategory3sOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaCategory3Condition
+  ): MetaCategory3sConnection
+
+  """Reads and enables pagination through a set of `MetaConcreteEvent`."""
+  metaConcreteEvents(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteEvent`."""
+    orderBy: [MetaConcreteEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteEventCondition
+  ): MetaConcreteEventsConnection
+
+  """Reads and enables pagination through a set of `MetaConcreteMarket`."""
+  metaConcreteMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteMarket`."""
+    orderBy: [MetaConcreteMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteMarketCondition
+  ): MetaConcreteMarketsConnection
+
+  """Reads and enables pagination through a set of `MetaConcreteOutcome`."""
+  metaConcreteOutcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaConcreteOutcome`."""
+    orderBy: [MetaConcreteOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaConcreteOutcomeCondition
+  ): MetaConcreteOutcomesConnection
+
+  """Reads and enables pagination through a set of `MetaEvent`."""
+  metaEvents(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaEvent`."""
+    orderBy: [MetaEventsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaEventCondition
+  ): MetaEventsConnection
+
+  """Reads and enables pagination through a set of `MetaMarket`."""
+  metaMarkets(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaMarket`."""
+    orderBy: [MetaMarketsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaMarketCondition
+  ): MetaMarketsConnection
+
+  """Reads and enables pagination through a set of `MetaMarketCollection`."""
+  metaMarketCollections(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaMarketCollection`."""
+    orderBy: [MetaMarketCollectionsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaMarketCollectionCondition
+  ): MetaMarketCollectionsConnection
+
+  """Reads and enables pagination through a set of `MetaOutcome`."""
+  metaOutcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `MetaOutcome`."""
+    orderBy: [MetaOutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: MetaOutcomeCondition
+  ): MetaOutcomesConnection
+
+  """Reads and enables pagination through a set of `Outcome`."""
+  outcomes(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Outcome`."""
+    orderBy: [OutcomesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: OutcomeCondition
+  ): OutcomesConnection
+
+  """Reads and enables pagination through a set of `OutcomeView`."""
+  outcomeViews(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `OutcomeView`."""
+    orderBy: [OutcomeViewsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: OutcomeViewCondition
+  ): OutcomeViewsConnection
+
+  """Reads and enables pagination through a set of `Queue`."""
+  queues(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Queue`."""
+    orderBy: [QueuesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: QueueCondition
+  ): QueuesConnection
+
+  """Reads and enables pagination through a set of `Rename`."""
+  renames(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Rename`."""
+    orderBy: [RenamesOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: RenameCondition
+  ): RenamesConnection
+
+  """Reads and enables pagination through a set of `Run`."""
+  runs(
+    """Only read the first `n` values of the set."""
+    first: Int
+
+    """Only read the last `n` values of the set."""
+    last: Int
+
+    """
+    Skip the first `n` values from our `after` cursor, an alternative to cursor
+    based pagination. May not be used with `last`.
+    """
+    offset: Int
+
+    """Read all values in the set before (above) this cursor."""
+    before: Cursor
+
+    """Read all values in the set after (below) this cursor."""
+    after: Cursor
+
+    """The method to use when ordering `Run`."""
+    orderBy: [RunsOrderBy!] = [PRIMARY_KEY_ASC]
+
+    """
+    A condition to be used in determining which values should be returned by the collection.
+    """
+    condition: RunCondition
+  ): RunsConnection
+  _typeormMigration(id: Int!): _TypeormMigration
+  category1(id: BigInt!): Category1
+  category2(id: BigInt!): Category2
+  category3(id: BigInt!): Category3
+  concreteEvent(id: BigInt!): ConcreteEvent
+  concreteMarket(id: BigInt!): ConcreteMarket
+  concreteOutcome(id: BigInt!): ConcreteOutcome
+  event(id: BigInt!): Event
+  eventView(id: BigInt!): EventView
+  market(id: BigInt!): Market
+  marketCollection(id: BigInt!): MarketCollection
+  marketCollectionJoinMarket(marketCollectionId: BigInt!, marketId: BigInt!): MarketCollectionJoinMarket
+  marketView(id: BigInt!): MarketView
+  metaCategory1(id: BigInt!): MetaCategory1
+  metaCategory2(id: BigInt!): MetaCategory2
+  metaCategory3(id: BigInt!): MetaCategory3
+  metaConcreteEvent(id: BigInt!): MetaConcreteEvent
+  metaConcreteMarket(id: BigInt!): MetaConcreteMarket
+  metaConcreteOutcome(id: BigInt!): MetaConcreteOutcome
+  metaEvent(id: BigInt!): MetaEvent
+  metaMarket(id: BigInt!): MetaMarket
+  metaMarketCollection(id: BigInt!): MetaMarketCollection
+  metaOutcome(id: BigInt!): MetaOutcome
+  outcome(id: BigInt!): Outcome
+  outcomeView(id: BigInt!): OutcomeView
+  queue(id: BigInt!): Queue
+  rename(id: BigInt!): Rename
+  run(id: UUID!): Run
+  canonicalise(value: String!): String
+  eventByCanonicalisedNameUniqueQuery(canonicalisedNameUnique: String): EventView
+
+  """Reads a single `_TypeormMigration` using its globally unique `ID`."""
+  _typeormMigrationByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `_TypeormMigration`.
+    """
+    nodeId: ID!
+  ): _TypeormMigration
+
+  """Reads a single `Category1` using its globally unique `ID`."""
+  category1ByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Category1`."""
+    nodeId: ID!
+  ): Category1
+
+  """Reads a single `Category2` using its globally unique `ID`."""
+  category2ByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Category2`."""
+    nodeId: ID!
+  ): Category2
+
+  """Reads a single `Category3` using its globally unique `ID`."""
+  category3ByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Category3`."""
+    nodeId: ID!
+  ): Category3
+
+  """Reads a single `ConcreteEvent` using its globally unique `ID`."""
+  concreteEventByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `ConcreteEvent`.
+    """
+    nodeId: ID!
+  ): ConcreteEvent
+
+  """Reads a single `ConcreteMarket` using its globally unique `ID`."""
+  concreteMarketByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `ConcreteMarket`.
+    """
+    nodeId: ID!
+  ): ConcreteMarket
+
+  """Reads a single `ConcreteOutcome` using its globally unique `ID`."""
+  concreteOutcomeByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `ConcreteOutcome`.
+    """
+    nodeId: ID!
+  ): ConcreteOutcome
+
+  """Reads a single `Event` using its globally unique `ID`."""
+  eventByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Event`."""
+    nodeId: ID!
+  ): Event
+
+  """Reads a single `EventView` using its globally unique `ID`."""
+  eventViewByNodeId(
+    """The globally unique `ID` to be used in selecting a single `EventView`."""
+    nodeId: ID!
+  ): EventView
+
+  """Reads a single `Market` using its globally unique `ID`."""
+  marketByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Market`."""
+    nodeId: ID!
+  ): Market
+
+  """Reads a single `MarketCollection` using its globally unique `ID`."""
+  marketCollectionByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MarketCollection`.
+    """
+    nodeId: ID!
+  ): MarketCollection
+
+  """
+  Reads a single `MarketCollectionJoinMarket` using its globally unique `ID`.
+  """
+  marketCollectionJoinMarketByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MarketCollectionJoinMarket`.
+    """
+    nodeId: ID!
+  ): MarketCollectionJoinMarket
+
+  """Reads a single `MarketView` using its globally unique `ID`."""
+  marketViewByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MarketView`.
+    """
+    nodeId: ID!
+  ): MarketView
+
+  """Reads a single `MetaCategory1` using its globally unique `ID`."""
+  metaCategory1ByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaCategory1`.
+    """
+    nodeId: ID!
+  ): MetaCategory1
+
+  """Reads a single `MetaCategory2` using its globally unique `ID`."""
+  metaCategory2ByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaCategory2`.
+    """
+    nodeId: ID!
+  ): MetaCategory2
+
+  """Reads a single `MetaCategory3` using its globally unique `ID`."""
+  metaCategory3ByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaCategory3`.
+    """
+    nodeId: ID!
+  ): MetaCategory3
+
+  """Reads a single `MetaConcreteEvent` using its globally unique `ID`."""
+  metaConcreteEventByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaConcreteEvent`.
+    """
+    nodeId: ID!
+  ): MetaConcreteEvent
+
+  """Reads a single `MetaConcreteMarket` using its globally unique `ID`."""
+  metaConcreteMarketByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaConcreteMarket`.
+    """
+    nodeId: ID!
+  ): MetaConcreteMarket
+
+  """Reads a single `MetaConcreteOutcome` using its globally unique `ID`."""
+  metaConcreteOutcomeByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaConcreteOutcome`.
+    """
+    nodeId: ID!
+  ): MetaConcreteOutcome
+
+  """Reads a single `MetaEvent` using its globally unique `ID`."""
+  metaEventByNodeId(
+    """The globally unique `ID` to be used in selecting a single `MetaEvent`."""
+    nodeId: ID!
+  ): MetaEvent
+
+  """Reads a single `MetaMarket` using its globally unique `ID`."""
+  metaMarketByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaMarket`.
+    """
+    nodeId: ID!
+  ): MetaMarket
+
+  """Reads a single `MetaMarketCollection` using its globally unique `ID`."""
+  metaMarketCollectionByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaMarketCollection`.
+    """
+    nodeId: ID!
+  ): MetaMarketCollection
+
+  """Reads a single `MetaOutcome` using its globally unique `ID`."""
+  metaOutcomeByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `MetaOutcome`.
+    """
+    nodeId: ID!
+  ): MetaOutcome
+
+  """Reads a single `Outcome` using its globally unique `ID`."""
+  outcomeByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Outcome`."""
+    nodeId: ID!
+  ): Outcome
+
+  """Reads a single `OutcomeView` using its globally unique `ID`."""
+  outcomeViewByNodeId(
+    """
+    The globally unique `ID` to be used in selecting a single `OutcomeView`.
+    """
+    nodeId: ID!
+  ): OutcomeView
+
+  """Reads a single `Queue` using its globally unique `ID`."""
+  queueByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Queue`."""
+    nodeId: ID!
+  ): Queue
+
+  """Reads a single `Rename` using its globally unique `ID`."""
+  renameByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Rename`."""
+    nodeId: ID!
+  ): Rename
+
+  """Reads a single `Run` using its globally unique `ID`."""
+  runByNodeId(
+    """The globally unique `ID` to be used in selecting a single `Run`."""
+    nodeId: ID!
+  ): Run
+  dimensions: Dimensions!
+  settings: Settings!
+}
+
+type Queue implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  data: JSON!
+  createdAt: Datetime!
+}
+
+"""
+A condition to be used against `Queue` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input QueueCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `data` field."""
+  data: JSON
+
+  """Checks for equality with the object’s `createdAt` field."""
+  createdAt: Datetime
+}
+
+"""An input for mutations affecting `Queue`"""
+input QueueInput {
+  id: BigInt
+  data: JSON!
+  createdAt: Datetime
+}
+
+"""A connection to a list of `Queue` values."""
+type QueuesConnection {
+  """A list of `Queue` objects."""
+  nodes: [Queue]!
+
+  """
+  A list of edges which contains the `Queue` and cursor to aid in pagination.
+  """
+  edges: [QueuesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Queue` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Queue` edge in the connection."""
+type QueuesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Queue` at the end of the edge."""
+  node: Queue
+}
+
+"""Methods to use when ordering `Queue`."""
+enum QueuesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  DATA_ASC
+  DATA_DESC
+  CREATED_AT_ASC
+  CREATED_AT_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Rename implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: BigInt!
+  entityName: EntityNameEnum!
+  regexSearch: String!
+  regexReplace: String!
+  displayOrder: Int!
+}
+
+"""
+A condition to be used against `Rename` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input RenameCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: BigInt
+
+  """Checks for equality with the object’s `entityName` field."""
+  entityName: EntityNameEnum
+
+  """Checks for equality with the object’s `regexSearch` field."""
+  regexSearch: String
+
+  """Checks for equality with the object’s `regexReplace` field."""
+  regexReplace: String
+
+  """Checks for equality with the object’s `displayOrder` field."""
+  displayOrder: Int
+}
+
+"""A connection to a list of `Rename` values."""
+type RenamesConnection {
+  """A list of `Rename` objects."""
+  nodes: [Rename]!
+
+  """
+  A list of edges which contains the `Rename` and cursor to aid in pagination.
+  """
+  edges: [RenamesEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Rename` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Rename` edge in the connection."""
+type RenamesEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Rename` at the end of the edge."""
+  node: Rename
+}
+
+"""Methods to use when ordering `Rename`."""
+enum RenamesOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  ENTITY_NAME_ASC
+  ENTITY_NAME_DESC
+  REGEX_SEARCH_ASC
+  REGEX_SEARCH_DESC
+  REGEX_REPLACE_ASC
+  REGEX_REPLACE_DESC
+  DISPLAY_ORDER_ASC
+  DISPLAY_ORDER_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+"""All input for the `retrieveConcreteEntity` mutation."""
+input RetrieveConcreteEntityInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  tableName: String
+  metaParam: MetaInput
+}
+
+"""The output of our `retrieveConcreteEntity` mutation."""
+type RetrieveConcreteEntityPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  string: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `retrieveProcessedEntityByCanonicalised` mutation."""
+input RetrieveProcessedEntityByCanonicalisedInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  tableName: String
+  metaParam: MetaInput
+}
+
+"""The output of our `retrieveProcessedEntityByCanonicalised` mutation."""
+type RetrieveProcessedEntityByCanonicalisedPayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  string: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `retrieveProcessedEntityWithConcrete` mutation."""
+input RetrieveProcessedEntityWithConcreteInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  tableName: String
+  metaParam: MetaInput
+}
+
+"""The output of our `retrieveProcessedEntityWithConcrete` mutation."""
+type RetrieveProcessedEntityWithConcretePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  string: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+"""All input for the `retrieveProcessedEntityWithoutConcrete` mutation."""
+input RetrieveProcessedEntityWithoutConcreteInput {
+  """
+  An arbitrary string value with no semantic meaning. Will be included in the
+  payload verbatim. May be used to track mutations by the client.
+  """
+  clientMutationId: String
+  tableName: String
+  metaParam: MetaInput
+}
+
+"""The output of our `retrieveProcessedEntityWithoutConcrete` mutation."""
+type RetrieveProcessedEntityWithoutConcretePayload {
+  """
+  The exact same `clientMutationId` that was provided in the mutation input,
+  unchanged and unused. May be used by a client to track mutations.
+  """
+  clientMutationId: String
+  string: String
+
+  """
+  Our root query field type. Allows us to run any query from our mutation payload.
+  """
+  query: Query
+}
+
+type Run implements Node {
+  """
+  A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  """
+  nodeId: ID!
+  id: UUID!
+  processed: Boolean!
+  createdAt: Datetime!
+  updatedAt: Datetime
+}
+
+"""
+A condition to be used against `Run` object types. All fields are tested for equality and combined with a logical ‘and.’
+"""
+input RunCondition {
+  """Checks for equality with the object’s `id` field."""
+  id: UUID
+
+  """Checks for equality with the object’s `processed` field."""
+  processed: Boolean
+
+  """Checks for equality with the object’s `createdAt` field."""
+  createdAt: Datetime
+
+  """Checks for equality with the object’s `updatedAt` field."""
+  updatedAt: Datetime
+}
+
+"""A connection to a list of `Run` values."""
+type RunsConnection {
+  """A list of `Run` objects."""
+  nodes: [Run]!
+
+  """
+  A list of edges which contains the `Run` and cursor to aid in pagination.
+  """
+  edges: [RunsEdge!]!
+
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """The count of *all* `Run` you could get from the connection."""
+  totalCount: Int!
+}
+
+"""A `Run` edge in the connection."""
+type RunsEdge {
+  """A cursor for use in pagination."""
+  cursor: Cursor
+
+  """The `Run` at the end of the edge."""
+  node: Run
+}
+
+"""Methods to use when ordering `Run`."""
+enum RunsOrderBy {
+  NATURAL
+  ID_ASC
+  ID_DESC
+  PROCESSED_ASC
+  PROCESSED_DESC
+  CREATED_AT_ASC
+  CREATED_AT_DESC
+  UPDATED_AT_ASC
+  UPDATED_AT_DESC
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+}
+
+type Settings {
+  layoutSize: LayoutSize
+}
+
+input SettingsInput {
+  layoutSize: LayoutSize
+}
+
+enum StatusEnum {
+  ACTIVE
+  SUSPENDED
+}
+
+"""
+A universally unique identifier as defined by [RFC 4122](https://tools.ietf.org/html/rfc4122).
+"""
+scalar UUID

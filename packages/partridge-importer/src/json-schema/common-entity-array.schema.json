@@ -1,0 +1,521 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "Association": {
+            "additionalProperties": {
+                "items": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": "array"
+            },
+            "type": "object"
+        },
+        "Big": {
+            "properties": {
+                "c": {
+                    "description": "Returns an array of single digits",
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "e": {
+                    "description": "Returns the exponent, Integer, -1e+6 to 1e+6 inclusive",
+                    "type": "number"
+                },
+                "s": {
+                    "description": "Returns the sign, -1 or 1",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "Category1Fields": {
+            "properties": {
+                "processed": {
+                    "properties": {
+                        "display_order": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "Category3Fields": {
+            "properties": {
+                "processed": {
+                    "properties": {
+                        "display_order": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "CommonEntity<Category1Fields,Category1Associations>": {
+            "properties": {
+                "associations": {
+                    "properties": {
+                    },
+                    "type": "object"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/Category1Fields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "CommonEntity<Category3Fields,Association>": {
+            "properties": {
+                "associations": {
+                    "$ref": "#/definitions/Association"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/Category3Fields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "CommonEntity<MarketCollectionFields,Association>": {
+            "properties": {
+                "associations": {
+                    "$ref": "#/definitions/Association"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/MarketCollectionFields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "CrunchAction": {
+            "enum": [
+                "CREATE_CONCRETE",
+                "UPDATE_AND_CREATE_CONCRETE",
+                "UPDATE_AND_CREATE_PROCESSED"
+            ],
+            "type": "string"
+        },
+        "CrunchTmp": {
+            "properties": {
+                "action": {
+                    "$ref": "#/definitions/CrunchAction"
+                },
+                "suggest_rename_rules": {
+                    "type": "boolean"
+                },
+                "unique_append": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "EntityName": {
+            "enum": [
+                "CATEGORY1",
+                "CATEGORY2",
+                "CATEGORY3",
+                "EVENT",
+                "MARKET",
+                "MARKETCOLLECTION",
+                "OUTCOME"
+            ],
+            "type": "string"
+        },
+        "EventFields": {
+            "properties": {
+                "concrete": {
+                    "properties": {
+                        "displayed": {
+                            "type": "boolean"
+                        },
+                        "status": {
+                            "$ref": "#/definitions/Status"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "processed": {
+                    "properties": {
+                        "display_order": {
+                            "type": "number"
+                        },
+                        "event_date": {
+                            "description": "Enables basic storage and retrieval of dates and times.",
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "type": {
+                            "$ref": "#/definitions/EventType"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "Status": {
+            "enum": [
+                "ACTIVE",
+                "SUSPENDED"
+            ],
+            "type": "string"
+        },
+        "EventType": {
+            "enum": [
+                "MATCH_2_TEAMS",
+                "OUTRIGHT"
+            ],
+            "type": "string"
+        },
+        "FeedSupplierName": {
+            "enum": [
+                "coral",
+                "sky"
+            ],
+            "type": "string"
+        },
+        "FetchMeta": {
+            "properties": {
+                "run_id": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "MandatoryFields": {
+            "required": [
+                "feed_supplier",
+                "id",
+                "name"
+            ],
+            "properties": {
+                "feed_supplier": {
+                    "$ref": "#/definitions/FeedSupplierName"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "MarketCollectionFields": {
+            "properties": {
+                "processed": {
+                    "properties": {
+                        "display_order": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "MarketFields": {
+            "properties": {
+                "concrete": {
+                    "properties": {
+                        "bet_in_play": {
+                            "type": "boolean"
+                        },
+                        "bet_till": {
+                            "description": "Enables basic storage and retrieval of dates and times.",
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "betting_status": {
+                            "enum": [
+                                "PRICED"
+                            ],
+                            "type": "string"
+                        },
+                        "cashout_available": {
+                            "type": "boolean"
+                        },
+                        "display_order": {
+                            "type": "number"
+                        },
+                        "eachway_available": {
+                            "type": "boolean"
+                        },
+                        "first_four_available": {
+                            "type": "boolean"
+                        },
+                        "forecast_available": {
+                            "type": "boolean"
+                        },
+                        "guaranteed_price_available": {
+                            "type": "boolean"
+                        },
+                        "is_default": {
+                            "type": "boolean"
+                        },
+                        "place_available": {
+                            "type": "boolean"
+                        },
+                        "quinella_available": {
+                            "type": "boolean"
+                        },
+                        "status": {
+                            "$ref": "#/definitions/Status"
+                        },
+                        "tricast_available": {
+                            "type": "boolean"
+                        },
+                        "url": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "processed": {
+                    "properties": {
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "Status": {
+            "enum": [
+                "ACTIVE",
+                "SUSPENDED"
+            ],
+            "type": "string"
+        },
+        "MergeableEntity<EventFields,Association>": {
+            "properties": {
+                "associations": {
+                    "$ref": "#/definitions/Association"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/EventFields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "MergeableEntity<MarketFields,Association>": {
+            "properties": {
+                "associations": {
+                    "$ref": "#/definitions/Association"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/MarketFields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "MergeableEntity<OutcomeFields,Association>": {
+            "properties": {
+                "associations": {
+                    "$ref": "#/definitions/Association"
+                },
+                "crunch_tmp": {
+                    "$ref": "#/definitions/CrunchTmp"
+                },
+                "fields": {
+                    "$ref": "#/definitions/OutcomeFields"
+                },
+                "import_tmp": {
+                },
+                "meta": {
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/FetchMeta"
+                        },
+                        {
+                            "$ref": "#/definitions/MandatoryFields"
+                        }
+                    ]
+                },
+                "type": {
+                    "$ref": "#/definitions/EntityName"
+                }
+            },
+            "type": "object"
+        },
+        "OutcomeFields": {
+            "properties": {
+                "concrete": {
+                    "properties": {
+                        "display_order": {
+                            "type": "number"
+                        },
+                        "handicap": {
+                            "type": "string"
+                        },
+                        "is_home": {
+                            "type": "boolean"
+                        },
+                        "live_price_available": {
+                            "type": "boolean"
+                        },
+                        "odds": {
+                            "type": "string"
+                        },
+                        "odds_decimal": {
+                            "$ref": "#/definitions/Big"
+                        },
+                        "runner_number": {
+                            "type": "number"
+                        },
+                        "starting_price_available": {
+                            "type": "boolean"
+                        },
+                        "status": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    },
+                    "type": "object"
+                },
+                "processed": {
+                    "properties": {
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "Status": {
+            "enum": [
+                "ACTIVE",
+                "SUSPENDED"
+            ],
+            "type": "string"
+        }
+    },
+    "items": {
+        "anyOf": [
+            {
+                "$ref": "#/definitions/CommonEntity<Category1Fields,Category1Associations>"
+            },
+            {
+                "$ref": "#/definitions/CommonEntity<Category3Fields,Association>"
+            },
+            {
+                "$ref": "#/definitions/MergeableEntity<EventFields,Association>"
+            },
+            {
+                "$ref": "#/definitions/MergeableEntity<MarketFields,Association>"
+            },
+            {
+                "$ref": "#/definitions/MergeableEntity<OutcomeFields,Association>"
+            },
+            {
+                "$ref": "#/definitions/CommonEntity<MarketCollectionFields,Association>"
+            }
+        ]
+    },
+    "type": "array"
+}
+

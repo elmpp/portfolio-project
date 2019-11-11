@@ -1,0 +1,52 @@
+# ---- https://github.com/apollographql/graphql-tag
+#import "./EventFragment.graphql"
+#import "./MarketFragment.graphql"
+#import "./OutcomeFragment.graphql"
+#import "./BookieFragment.graphql"
+#import "./ArticleFragment.graphql"
+#import "./AllCategoriesFragment.graphql"
+
+query Event(
+  $canonicalised_name: String,
+  $market__canonicalised_name: String,
+  $market__role: String,
+  $outcome__odds_rank_unique: Int,
+  $limit: Int,
+  $type: String,
+  $article__required: Boolean,
+  $category1__canonicalised_name: String,
+  $category3__canonicalised_name: String
+) {
+  event (
+    canonicalised_name: $canonicalised_name,
+    market__canonicalised_name: $market__canonicalised_name,
+    market__role: $market__role,
+    outcome__odds_rank_unique: $outcome__odds_rank_unique,
+    limit: $limit,
+    type: $type,
+    article__required: $article__required,
+    category1__canonicalised_name: $category1__canonicalised_name,
+    category3__canonicalised_name: $category3__canonicalised_name
+  ) {
+    ...EventFragment
+    market {
+      ...MarketFragment
+      outcome {
+        ...OutcomeFragment
+        media_logo {
+          preview
+          small
+        }
+        bookie {
+          ...BookieFragment
+        }
+      }
+    }
+    article {
+      ...ArticleFragment
+    }
+    category3 {
+      ...AllCategoriesFragment
+    }
+  }
+}

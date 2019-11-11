@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "../partridge-schema/src"],
+  "exec": "yarn build && NODE_ENV=development APP_ENV=local DEBUG=logging:* yarn server",
+  "ext": "js, ts, tsx, jsx, sql"
+}

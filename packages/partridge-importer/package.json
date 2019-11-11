@@ -1,0 +1,72 @@
+{
+  "name": "partridge-importer",
+  "version": "0.86.0",
+  "description": "Imports bookie feeds",
+  "keywords": [
+    "js",
+    "typescript"
+  ],
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge.git"
+  },
+  "scripts": {
+    "build": "yarn build:tidy; DEBUG='org-build.*' PORT=3002 APP_ENV=local APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx orgBuild build",
+    "build:tidy": "rimraf ./index.js ./index.js.map ./*hot-update.js*",
+    "build:webpack-debug-web": "__BUNDLE_ANALYSER_WEB_ENABLE=1 webpack-dashboard -- npm run build",
+    "build:webpack-debug-node": "__BUNDLE_ANALYSER_NODE_ENABLE=1 webpack-dashboard -- npm run build",
+    "dev": "yarn build:tidy; DEBUG=logging.* PORT=3002 NODE_ENV=development APP_ENV=local APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx orgBuild start",
+    "dev:debug": "yarn build:tidy; DEBUG=logging.*,org-build.* PORT=3002 NODE_ENV=development APP_ENV=local APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx orgBuild start --inspect",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "jsonschema-generate": "cd ../../; npx typescript-json-schema ./tsconfig.json CommonEntityUnionArray --out packages/partridge-importer/src/json-schema/common-entity-array.schema.json; echo '\n\n*** @see feed-importing.md::jsonschema for last step ***\n\n'",
+    "lint": "npm run type-check",
+    "prepare": "cd ../../ && yarn prepare",
+    "runimport": "NODE_CONFIG_DIR='../partridge-config/dist/config' APP_ENV=local NODE_ENV=development DEBUG='typeorm:*,routing:*,middleware:*,logging:*' TZ='UTC' APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx ts-node --files src/run-cli.ts",
+    "runpolly": "../partridge-shell/scripts/polly-js.sh up --debug",
+    "server-rebuild": "npm rebuild grpc; npm run server",
+    "start:prod": "PORT=3002 DEBUG=logging.*,,org-build.* APP_NAME=$npm_package_name APP_VERSION=$npm_package_version functions-framework --target=importer --signature-type=event",
+    "type-check": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^1.1.0",
+    "@google-cloud/pubsub": "0.28.1",
+    "ajv": "^6.8.1",
+    "axios": "0.18.0",
+    "big.js": "^5.2.2",
+    "jsonpath": "^1.0.0",
+    "lodash": "4.17.15",
+    "org-build": "^0.86.0",
+    "org-common": "^0.86.0",
+    "partridge-config": "^0.86.0",
+    "partridge-logging": "^0.86.0",
+    "partridge-models": "^0.86.0",
+    "slugify": "^1.3.4",
+    "uuid": "^3.3.2",
+    "xml-js": "^1.6.9"
+  },
+  "devDependencies": {
+    "@pollyjs/adapter-node-http": "^2.4.0",
+    "@pollyjs/cli": "^2.6.3",
+    "@pollyjs/core": "^2.4.0",
+    "@pollyjs/persister-fs": "^2.1.0",
+    "@types/big.js": "^4.0.5",
+    "@types/jsonpath": "^0.2.0",
+    "@types/node-uuid": "^0.0.28",
+    "@types/pollyjs__adapter-node-http": "^2.0.0",
+    "@types/pollyjs__core": "^2.3.0",
+    "@types/pollyjs__persister-fs": "^2.0.0",
+    "@types/uuid": "^3.4.4",
+    "axios-mock-adapter": "^1.16.0",
+    "setup-polly-jest": "^0.5.2",
+    "ts-node": "8.2.0",
+    "typescript": "3.6.4",
+    "typescript-json-schema": "^0.38.0"
+  }
+}

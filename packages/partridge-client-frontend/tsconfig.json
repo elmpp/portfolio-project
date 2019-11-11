@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "module": "esnext",
+    "jsx": "preserve",
+    "allowJs": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "isolatedModules": true,
+    "target": "es5",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  "files": [
+    "./typings/index.d.ts",
+    "../typings/index.d.ts"
+  ],
+  "include": [
+    "./**/*",
+    "./pages/**/*",
+  ],
+}

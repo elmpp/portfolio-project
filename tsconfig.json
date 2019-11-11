@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noLib": false, // generates .map and .d.ts in addition to .js
+  }
+}

@@ -1,0 +1,7 @@
+**/*.orig.js
+**/*.skip.js
+
+# src/modules/ui/**/*
+# src/modules/header/**/*
+
+dist

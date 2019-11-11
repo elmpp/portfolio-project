@@ -1,0 +1,80 @@
+{
+  "name": "partridge-client-frontend",
+  "version": "0.86.0",
+  "description": "Partridge Website",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "codegen": "./scripts/codegen.sh generate --debug",
+    "dev": "APP_NAME=$npm_package_name APP_VERSION=$npm_package_version FRONTEND_HOST_WWW_PORT=3000 DEBUG='routing:*,middleware:*,logging:*' next",
+    "env:up": "npx opn-cli http://localhost:8080",
+    "lint": "eslint --cache --config ../../.eslintrc --format=../../node_modules/eslint-formatter-pretty ./ && npm run type-check",
+    "prepare": "cd ../../ && yarn prepare",
+    "start": "DEBUG='routing:*,middleware:*,logging:*' APP_NAME=$npm_package_name APP_VERSION=$npm_package_version next start",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "type-check": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge-client-frontend.git"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "10.0.5",
+    "apollo-cache-inmemory": "1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link": "1.2.12",
+    "apollo-link-error": "1.1.11",
+    "apollo-link-http": "1.5.15",
+    "apollo-link-schema": "1.2.3",
+    "apollo-link-state": "0.4.2",
+    "debug": "4.1.1",
+    "graphql": "14.3.1",
+    "graphql-tag": "^2.9.2",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "4.17.15",
+    "matchmedia-polyfill": "^0.3.1",
+    "mediaquery": "0.0.4",
+    "next": "^8.1.1-canary.52",
+    "partridge-client-components": "0.86.0",
+    "partridge-config": "^0.86.0",
+    "partridge-logging": "^0.86.0",
+    "react": "16.8.3",
+    "react-apollo-hooks": "^0.4.5",
+    "react-art": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-native-web": "0.11.5"
+  },
+  "devDependencies": {
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/next": "8.0.5",
+    "@zeit/next-typescript": "^1.1.1",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-import-graphql": "2.7.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-react-native-web": "^0.11.4",
+    "file-loader": "^4.0.0",
+    "graphql-tools": "^3.1.1",
+    "next-compose-plugins": "^2.2.0",
+    "next-transpile-modules": "^2.3.1",
+    "node-mocks-http": "^1.7.0",
+    "opn": "^6.0.0",
+    "rimraf": "^2.6.3",
+    "shell": "^0.86.0",
+    "ts-node": "8.2.0",
+    "typescript": "3.6.4"
+  },
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0",
+    "apollo-link": "^1.2.6"
+  },
+  "keywords": [
+    "reactjs",
+    "partridge"
+  ]
+}

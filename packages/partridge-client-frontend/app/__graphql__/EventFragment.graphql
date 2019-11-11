@@ -1,0 +1,12 @@
+fragment EventFragment on Event {
+    id
+    name
+    canonicalised_name
+    display_name
+    date
+    date_human
+    date_human_notime
+    date_short
+    date_time
+    type
+}

@@ -1,0 +1,21 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "0.86.0",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "allowBranch": [
+        "release/*",
+        "master"
+      ],
+      "ignoreChanges": [
+        "**/*spec.js",
+        "packages/test-*"
+      ]
+    }
+  }
+}

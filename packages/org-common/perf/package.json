@@ -1,0 +1,6 @@
+{
+  "name": "org-common/perf",
+  "private": true,
+  "main": "../dist/perf/index.js",
+  "source": "../src/perf/index.ts"
+}

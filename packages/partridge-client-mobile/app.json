@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Partridge Mobile",
+    "slug": "partridge",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": [
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "../partridge-client-components/assets/__generated__/**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "org.peartree.partridge"
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [ "js", "json", "ts", "tsx", "graphql", "gql" ]
+    }
+  }
+}

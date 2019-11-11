@@ -1,0 +1,91 @@
+# docs - https://goo.gl/p5Ba8K
+
+# input Responsive_lessThanInput {
+#   extraSmall: boolean
+#   small: boolean
+#   medium: boolean
+#   large: boolean
+#   infinity: boolean
+# }
+
+# input Responsive_greaterThanInput {
+#   extraSmall: boolean
+#   small: boolean
+#   medium: boolean
+#   large: boolean
+#   infinity: boolean
+# }
+
+# input Responsive_isInput {
+#   extraSmall: boolean
+#   small: boolean
+#   medium: boolean
+#   large: boolean
+#   infinity: boolean
+# }
+
+input Responsive_computedInput {
+  extraSmall: Boolean
+  small: Boolean
+  medium: Boolean
+  large: Boolean
+  infinity: Boolean
+}
+
+input ResponsiveInput {
+  lessThan: Responsive_computedInput
+  greaterThan: Responsive_computedInput
+  is: Responsive_computedInput
+  mediaType: String
+  orientation: String
+}
+
+type Responsive {
+  lessThan: Responsive_computed!
+  greaterThan: Responsive_computed!
+  is: Responsive_computed!
+  mediaType: String!
+  orientation: String!
+}
+
+type Responsive_computed {
+  extraSmall: Boolean!
+  small: Boolean!
+  medium: Boolean!
+  large: Boolean!
+  infinity: Boolean!
+}
+
+# type Responsive_lessThan {
+#   extraSmall: String!
+#   small: String!
+#   medium: String!
+#   large: String!
+#   infinity: String!
+# }
+
+# type Responsive_greaterThan {
+#   extraSmall: String!
+#   small: String!
+#   medium: String!
+#   large: String!
+#   infinity: String!
+# }
+
+# type Responsive_is {
+#   extraSmall: String!
+#   small: String!
+#   medium: String!
+#   large: String!
+#   infinity: String!
+# }
+
+extend type Query {
+# type Query {
+  responsive: Responsive!
+}
+
+extend type Mutation {
+# type Mutation {
+  updateResponsive(responsiveObj: ResponsiveInput): Responsive
+}

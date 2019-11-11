@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "id": "252",
+    "url": "http://localhost:9999/oxi/pub?template=getEventCollections&event=12208720",
+    "name": "Match Betting",
+    "run_id": "23e40f94-4a28-4da3-a76d-c4afaeb2ad96",
+    "feed_supplier": "coral"
+  },
+  "type": "MARKETCOLLECTION",
+  "fields": { "processed": { "display_order": 0 } },
+  "crunch_tmp": { "unique_append": " Football" },
+  "associations": {
+    "MARKET": [
+      {
+        "id": "287715024",
+        "url": "http://localhost:9999/oxi/pub?template=getEventCollections&event=12208720",
+        "name": "Match Result",
+        "run_id": "23e40f94-4a28-4da3-a76d-c4afaeb2ad96",
+        "feed_supplier": "coral"
+      }
+    ]
+  }
+}

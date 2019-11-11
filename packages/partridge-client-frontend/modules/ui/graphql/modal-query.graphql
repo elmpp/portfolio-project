@@ -1,0 +1,6 @@
+query modalQuery {
+  modal @client {
+    open
+    data
+  }
+}

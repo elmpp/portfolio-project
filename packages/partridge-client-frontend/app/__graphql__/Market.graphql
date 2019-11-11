@@ -1,0 +1,17 @@
+# ---- https://github.com/apollographql/graphql-tag
+#import "./MarketFragment.graphql"
+
+query Market(
+  $event__canonicalised_name: String,
+  $limit: Int
+) {
+  market(
+    event__canonicalised_name: $event__canonicalised_name,
+    limit: $limit
+  ) {
+    ...MarketFragment
+    event {
+      canonicalised_name
+    }
+  }
+}

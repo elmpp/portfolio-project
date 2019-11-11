@@ -1,0 +1,5 @@
+fragment FeaturedFragment on Featured {
+    id
+    type
+    display_order
+}

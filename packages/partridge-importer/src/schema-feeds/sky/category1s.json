@@ -1,0 +1,214 @@
+{
+  "event_classes": [
+    {
+      "name": "American Football",
+      "url": "/sportsapi/v2/american-football",
+      "id": 27
+    },
+    {
+      "name": "Athletics",
+      "url": "/sportsapi/v2/athletics",
+      "id": 48
+    },
+    {
+      "name": "Aussie Rules",
+      "url": "/sportsapi/v2/aussie-rules",
+      "id": 10000062
+    },
+    {
+      "name": "Baseball",
+      "url": "/sportsapi/v2/baseball",
+      "id": 5000026
+    },
+    {
+      "name": "Basketball",
+      "url": "/sportsapi/v2/basketball",
+      "id": 28
+    },
+    {
+      "name": "Boxing",
+      "url": "/sportsapi/v2/boxing",
+      "id": 29
+    },
+    {
+      "name": "Cricket",
+      "url": "/sportsapi/v2/cricket",
+      "id": 30
+    },
+    {
+      "name": "Cycling",
+      "url": "/sportsapi/v2/cycling",
+      "id": 54
+    },
+    {
+      "name": "Darts",
+      "url": "/sportsapi/v2/darts",
+      "id": 33
+    },
+    {
+      "name": "ESports",
+      "url": "/sportsapi/v2/esports",
+      "id": 10000146
+    },
+    {
+      "name": "Football",
+      "url": "/sportsapi/v2/football",
+      "id": 5
+    },
+    {
+      "name": "Formula 1",
+      "url": "/sportsapi/v2/formula-1",
+      "id": 46
+    },
+    {
+      "name": "Gaelic Games",
+      "url": "/sportsapi/v2/gaelic-games",
+      "id": 10000007
+    },
+    {
+      "name": "Golf",
+      "url": "/sportsapi/v2/golf",
+      "id": 34
+    },
+    {
+      "name": "Greyhound Racing",
+      "url": "/sportsapi/v2/greyhound-racing",
+      "id": 23
+    },
+    {
+      "name": "Handball",
+      "url": "/sportsapi/v2/handball",
+      "id": 10000083
+    },
+    {
+      "name": "Hockey",
+      "url": "/sportsapi/v2/hockey",
+      "id": 10000078
+    },
+    {
+      "name": "Horse Racing",
+      "url": "/sportsapi/v2/horse-racing",
+      "id": 8
+    },
+    {
+      "name": "Ice Hockey",
+      "url": "/sportsapi/v2/ice-hockey",
+      "id": 10000001
+    },
+    {
+      "name": "Lotto",
+      "url": "/sportsapi/v2/lotto",
+      "id": 10000157
+    },
+    {
+      "name": "Motor Sport",
+      "url": "/sportsapi/v2/motor-sport",
+      "id": 10000053
+    },
+    {
+      "name": "Music Specials",
+      "url": "/sportsapi/v2/music-specials",
+      "id": 10000043
+    },
+    {
+      "name": "Netball",
+      "url": "/sportsapi/v2/netball",
+      "id": 10000122
+    },
+    {
+      "name": "Politics",
+      "url": "/sportsapi/v2/politics",
+      "id": 10000037
+    },
+    {
+      "name": "Rugby League",
+      "url": "/sportsapi/v2/rugby-league",
+      "id": 38
+    },
+    {
+      "name": "Rugby Union",
+      "url": "/sportsapi/v2/rugby-union",
+      "id": 31
+    },
+    {
+      "name": "Snooker",
+      "url": "/sportsapi/v2/snooker",
+      "id": 37
+    },
+    {
+      "name": "Speciality Bets",
+      "url": "/sportsapi/v2/speciality-bets",
+      "id": 32
+    },
+    {
+      "name": "Speedway",
+      "url": "/sportsapi/v2/speedway",
+      "id": 39
+    },
+    {
+      "name": "Squash",
+      "url": "/sportsapi/v2/squash",
+      "id": 10000121
+    },
+    {
+      "name": "TV and Film Specials",
+      "url": "/sportsapi/v2/tv-and-film-specials",
+      "id": 10000039
+    },
+    {
+      "name": "Tennis",
+      "url": "/sportsapi/v2/tennis",
+      "id": 35
+    },
+    {
+      "name": "UFC and MMA",
+      "url": "/sportsapi/v2/ufc-and-mma",
+      "id": 10000061
+    },
+    {
+      "name": "Virtual Football",
+      "url": "/sportsapi/v2/virtual-football",
+      "id": 10000092
+    },
+    {
+      "name": "Virtual Greyhounds",
+      "url": "/sportsapi/v2/virtual-greyhounds",
+      "id": 10000091
+    },
+    {
+      "name": "Virtual Horse Racing",
+      "url": "/sportsapi/v2/virtual-horse-racing",
+      "id": 10000013
+    },
+    {
+      "name": "Virtual Horse Racing Jumps",
+      "url": "/sportsapi/v2/virtual-horse-racing-jumps",
+      "id": 10000158
+    },
+    {
+      "name": "Virtual Motor Racing",
+      "url": "/sportsapi/v2/virtual-motor-racing",
+      "id": 10000093
+    },
+    {
+      "name": "Virtual Speedway",
+      "url": "/sportsapi/v2/virtual-speedway",
+      "id": 10000094
+    },
+    {
+      "name": "Volleyball",
+      "url": "/sportsapi/v2/volleyball",
+      "id": 10000084
+    },
+    {
+      "name": "Winter Sports",
+      "url": "/sportsapi/v2/winter-sports",
+      "id": 10000058
+    },
+    {
+      "name": "Wrestling",
+      "url": "/sportsapi/v2/wrestling",
+      "id": 10000099
+    }
+  ]
+}

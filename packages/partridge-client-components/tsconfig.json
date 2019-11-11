@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "rootDir": "src",
+    "noImplicitAny": false, // @see bookie-logo/index.tsx
+  },
+  "include": ["src/**/*.ts", "../typings/index.d.ts", "src/theme.tsx", "src/theme.tsx", "src/test-hero.tsx", "src/components/comparison-grid/small/index.tsx"],
+  "files": [
+    "./typings/index.d.ts",
+    "../typings/index.d.ts"
+  ],
+}

@@ -1,0 +1,15 @@
+// from razzle examples - https://tinyurl.com/y6p6ls3x
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "declaration": false,
+    "declarationMap": false,
+  },
+  "files": [
+    "./typings/index.d.ts",
+    "../typings/index.d.ts"
+  ],
+  "types": ["typePatches", "node", "webpack-env"]
+}

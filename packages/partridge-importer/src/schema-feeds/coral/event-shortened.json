@@ -1,0 +1,263 @@
+{
+  "declaration": { "attributes": { "version": "1.0", "encoding": "UTF-8" } },
+  "elements": [
+    { "type": "comment", "comment": " OXi dbPublish" },
+    { "type": "comment", "comment": " Copyright (c) 2001, 2002, 2003 Orbis Technology Ltd. All rights reserved." },
+    {
+      "type": "element",
+      "name": "oxip",
+      "attributes": { "version": "7.1", "created": "2019-02-12 11:12:55", "lastMsgId": "", "requestTime": "0.2468" },
+      "elements": [
+        {
+          "type": "element",
+          "name": "response",
+          "attributes": {
+            "request": "getEventDetails",
+            "code": "001",
+            "message": "success",
+            "debug": "",
+            "provider": "GENERIC"
+          },
+          "elements": [
+            { "type": "element", "name": "disclaimer" },
+            {
+              "type": "element",
+              "name": "event",
+              "attributes": {
+                "classId": "97",
+                "displayClassId": "",
+                "typeId": "442",
+                "displayTypeId": "",
+                "typeName": "Premier League",
+                "subTypeId": "",
+                "subTypeName": "",
+                "displayInTypeId": "",
+                "displayInTypeName": "",
+                "id": "12219180",
+                "numMarkets": "154",
+                "displayOrder": "0",
+                "extKey": "14736779",
+                "name": "West Ham v Fulham",
+                "url": "/e/12219180",
+                "date": "2019-02-22",
+                "time": "19:45:00",
+                "venue": "",
+                "betTillDate": "2019-02-22",
+                "betTillTime": "19:45:00",
+                "suspend": "",
+                "sort": "MTCH",
+                "status": "A",
+                "bettingStatus": "PRICED",
+                "channels": "IPCMQU",
+                "country": "",
+                "flags": "ST",
+                "raceNumber": "",
+                "hasBetInRun": "Y",
+                "hasBetInRunStarted": "N",
+                "lastUpdateDate": "2019-02-09",
+                "lastUpdateTime": "02:42:25",
+                "cashoutAvailable": "Y"
+              },
+              "elements": [
+                {
+                  "type": "element",
+                  "name": "market",
+                  "attributes": {
+                    "id": "288060923",
+                    "displayOrder": "-500",
+                    "name": "Match Result",
+                    "type": "-",
+                    "marketTemplateId": "37241",
+                    "marketTemplateName": "|Match Betting|",
+                    "sort": "MR",
+                    "status": "A",
+                    "bir": "N",
+                    "birIndex": "",
+                    "birDelay": "",
+                    "unformattedHandicap": "",
+                    "handicap": "",
+                    "placeAvailable": "N",
+                    "forecastAvailable": "N",
+                    "tricastAvailable": "N",
+                    "quinellaAvailable": "",
+                    "firstFourAvailable": "",
+                    "eachwayAvailable": "N",
+                    "startingPriceAvailable": "N",
+                    "livePriceAvailable": "Y",
+                    "guarenteedPriceAvailable": "N",
+                    "channels": "IPCMQU",
+                    "url": "/m/288060923",
+                    "flags": "",
+                    "lastUpdateDate": "2019-02-09",
+                    "lastUpdateTime": "02:42:25",
+                    "cashoutAvailable": "Y",
+                    "isRestricted": "N"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "outcome",
+                      "attributes": {
+                        "id": "925613415",
+                        "displayOrder": "1",
+                        "name": "West Ham",
+                        "status": "A",
+                        "odds": "20/23",
+                        "oddsDecimal": "1.87",
+                        "oddsHistory": "",
+                        "oddsOpening": "",
+                        "channels": "IPCMQU",
+                        "result": "-",
+                        "resultType": "H",
+                        "runnerNumber": "",
+                        "unformattedHandicap": "",
+                        "handicap": "",
+                        "scoreHome": "",
+                        "scoreAway": "",
+                        "lastUpdateDate": "2019-02-09",
+                        "lastUpdateTime": "02:42:25"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "outcome",
+                      "attributes": {
+                        "id": "925613414",
+                        "displayOrder": "2",
+                        "name": "Draw",
+                        "status": "A",
+                        "odds": "13/5",
+                        "oddsDecimal": "3.60",
+                        "oddsHistory": "",
+                        "oddsOpening": "",
+                        "channels": "IPCMQU",
+                        "result": "-",
+                        "resultType": "D",
+                        "runnerNumber": "",
+                        "unformattedHandicap": "",
+                        "handicap": "",
+                        "scoreHome": "",
+                        "scoreAway": "",
+                        "lastUpdateDate": "2019-02-09",
+                        "lastUpdateTime": "02:42:25"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "outcome",
+                      "attributes": {
+                        "id": "925613416",
+                        "displayOrder": "3",
+                        "name": "Fulham",
+                        "status": "A",
+                        "odds": "29/10",
+                        "oddsDecimal": "3.90",
+                        "oddsHistory": "",
+                        "oddsOpening": "",
+                        "channels": "IPCMQU",
+                        "result": "-",
+                        "resultType": "A",
+                        "runnerNumber": "",
+                        "unformattedHandicap": "",
+                        "handicap": "",
+                        "scoreHome": "",
+                        "scoreAway": "",
+                        "lastUpdateDate": "2019-02-09",
+                        "lastUpdateTime": "02:42:25"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "name": "market",
+                  "attributes": {
+                    "id": "288060952",
+                    "displayOrder": "0",
+                    "name": "Both Teams to Score",
+                    "type": "-",
+                    "marketTemplateId": "37220",
+                    "marketTemplateName": "|Both Teams to Score|",
+                    "sort": "--",
+                    "status": "A",
+                    "bir": "N",
+                    "birIndex": "",
+                    "birDelay": "",
+                    "unformattedHandicap": "",
+                    "handicap": "",
+                    "placeAvailable": "N",
+                    "forecastAvailable": "N",
+                    "tricastAvailable": "N",
+                    "quinellaAvailable": "",
+                    "firstFourAvailable": "",
+                    "eachwayAvailable": "N",
+                    "startingPriceAvailable": "N",
+                    "livePriceAvailable": "Y",
+                    "guarenteedPriceAvailable": "N",
+                    "channels": "IPCMQU",
+                    "url": "/m/288060952",
+                    "flags": "",
+                    "lastUpdateDate": "2019-02-09",
+                    "lastUpdateTime": "02:42:25",
+                    "cashoutAvailable": "Y",
+                    "isRestricted": "N"
+                  },
+                  "elements": [
+                    {
+                      "type": "element",
+                      "name": "outcome",
+                      "attributes": {
+                        "id": "925613492",
+                        "displayOrder": "1",
+                        "name": "Yes",
+                        "status": "A",
+                        "odds": "4/6",
+                        "oddsDecimal": "1.67",
+                        "oddsHistory": "",
+                        "oddsOpening": "",
+                        "channels": "IPCMQU",
+                        "result": "-",
+                        "resultType": "-",
+                        "runnerNumber": "",
+                        "unformattedHandicap": "",
+                        "handicap": "",
+                        "scoreHome": "",
+                        "scoreAway": "",
+                        "lastUpdateDate": "2019-02-09",
+                        "lastUpdateTime": "02:42:25"
+                      }
+                    },
+                    {
+                      "type": "element",
+                      "name": "outcome",
+                      "attributes": {
+                        "id": "925613490",
+                        "displayOrder": "2",
+                        "name": "No",
+                        "status": "A",
+                        "odds": "6/5",
+                        "oddsDecimal": "2.20",
+                        "oddsHistory": "",
+                        "oddsOpening": "",
+                        "channels": "IPCMQU",
+                        "result": "-",
+                        "resultType": "-",
+                        "runnerNumber": "",
+                        "unformattedHandicap": "",
+                        "handicap": "",
+                        "scoreHome": "",
+                        "scoreAway": "",
+                        "lastUpdateDate": "2019-02-09",
+                        "lastUpdateTime": "02:42:25"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

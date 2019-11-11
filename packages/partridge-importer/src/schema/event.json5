@@ -1,0 +1,42 @@
+// https://goo.gl/ZLg5zv
+{
+  // meta will be ever-present data about import
+  meta: {
+    // "fetch"
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+
+    // "mandatory"
+    id: "16",
+    feed: "coral",
+    name: "Millwall v Everton",
+    canonicalised_name: "millwall-v-everton",
+    
+    // differs from others in including the date of the event
+    // @see outcome.json5
+    canonicalised_name_unique: "wimbledon-vs-arsenal-2017-09-09-football", // ISO 8601 date format
+  },
+  // any associations will be defined explicitly..
+  associations: [],
+  // defines the [unique] constraints that will be required (not for CommonEntity)
+  // constraints: [
+  //   'canonicalised_name_unique'
+  // ],
+  fields: {
+    // destined for mergeable table
+    event_date: "2019-01-28 19:45:00+0000",
+    display_order: "-9999", // destined for appropriate concrete entity once saved
+    is_outright: true, // OUTRIGHT events need to be marked as such
+    type: "MATCH", // (MATCH | TOURNAMENT | ??) // this could well inform the `is_outright` field ^
+
+    // destined for concrete table
+    bet_in_play: true,
+    bet_till: "2019-01-28 19:45:00+0000",
+    betting_status: "PRICED", // (PRICED || ??)
+    cashout_available: true,
+    displayed: true,
+    has_bet_in_play: true,
+    status: "A", // what is this stuff?
+    url: "/e/20125"
+  }
+}

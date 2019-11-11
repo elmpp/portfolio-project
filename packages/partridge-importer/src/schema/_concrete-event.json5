@@ -1,0 +1,17 @@
+{
+  // meta will be ever-present data about import
+  meta: {
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    feed: "coral",
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+    id: "16", // unique identifier as supplied in feed
+  },
+  // any associations will be defined explicitly..
+  associations: [
+  ],
+  // defines the [unique] constraints that will be required (not for CommonEntity)
+  // constraints: {
+  // },
+  display_order: "-9999",
+  // markets do not need any concrete metadata
+}

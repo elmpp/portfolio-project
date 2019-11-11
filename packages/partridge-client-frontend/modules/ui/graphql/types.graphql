@@ -1,0 +1,21 @@
+# https://goo.gl/ikF8Tb
+input ModalInput {
+  open: Boolean
+  data: String
+}
+
+type Modal {
+  open: Boolean!
+  data: String
+}
+
+# https://goo.gl/7a1tb8
+extend type Mutation {
+  drawerToggle: Boolean!
+  modal(modalObj: ModalInput): Modal!
+}
+
+extend type Query {
+  drawer: Boolean!
+  modal: Modal!
+}

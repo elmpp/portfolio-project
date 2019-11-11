@@ -1,0 +1,39 @@
+diff --git a/node_modules/razzle-plugin-typescript/index.js b/node_modules/razzle-plugin-typescript/index.js
+index caad481..8ac4229 100644
+--- a/node_modules/razzle-plugin-typescript/index.js
++++ b/node_modules/razzle-plugin-typescript/index.js
+@@ -38,7 +38,7 @@ function modify(baseConfig, { target, dev }, webpack, userOptions = {}) {
+   // Configure ts-loader
+   const tsLoader = {
+     include,
+-    test: /\.tsx?$/,
++    test: options.test || /\.tsx?$/,
+     use: [
+       {
+         loader: require.resolve('ts-loader'),
+@@ -47,10 +47,24 @@ function modify(baseConfig, { target, dev }, webpack, userOptions = {}) {
+     ],
+   };
+ 
++  let babelLoaderUse
++  if (!babelLoader.use) {
++    babelLoaderUse = [{
++      loader: babelLoader.loader,
++      options: babelLoader.options || {},
++    }]
++  }
++  else if (typeof babelLoader.use === 'string') {
++    babelLoaderUse = [babelLoader.use]
++  }
++  else {
++    babelLoaderUse = []
++  }
++
+   if (options.useBabel) {
+     // If using babel, also add babel-loader to ts files,
+     // so we can use babel plugins on tsx files too
+-    tsLoader.use = [...babelLoader.use, ...tsLoader.use];
++    tsLoader.use = [...tsLoader.use, ...babelLoaderUse];
+   } else {
+     // If not using babel, remove it
+     config.module.rules = config.module.rules.filter(

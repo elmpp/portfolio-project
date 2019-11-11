@@ -1,0 +1,208 @@
+{
+  "declaration": { "attributes": { "version": "1.0", "encoding": "UTF-8" } },
+  "elements": [
+    { "type": "comment", "comment": " OXi dbPublish" },
+    { "type": "comment", "comment": " Copyright (c) 2001, 2002, 2003 Orbis Technology Ltd. All rights reserved." },
+    {
+      "type": "element",
+      "name": "oxip",
+      "attributes": { "version": "7.1", "created": "2019-01-26 16:36:39", "lastMsgId": "", "requestTime": "0.0423" },
+      "elements": [
+        {
+          "type": "element",
+          "name": "response",
+          "attributes": {
+            "request": "getCategories",
+            "code": "001",
+            "message": "success",
+            "debug": "",
+            "provider": "GENERIC"
+          },
+          "elements": [
+            { "type": "element", "name": "disclaimer" },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "16", "displayOrder": "-10001", "name": "Football", "category": "FOOTBALL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "34", "displayOrder": "-9999", "name": "Tennis", "category": "TENNIS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "6", "displayOrder": "-9998", "name": "Basketball", "category": "BASKETBALL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "13", "displayOrder": "-9997", "name": "Darts", "category": "DARTS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "36", "displayOrder": "-9990", "name": "Volleyball", "category": "VOLLEYBALL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "21", "displayOrder": "-9971", "name": "Horse Racing", "category": "HORSE_RACING" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": {
+                "id": "158",
+                "displayOrder": "-9970",
+                "name": "Horse Racing Distances",
+                "category": "Horse_Racing_Dis"
+              }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "48", "displayOrder": "-9960", "name": "TV Specials", "category": "TV_SPECIALS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "32", "displayOrder": "-9910", "name": "Snooker", "category": "SNOOKER" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "18", "displayOrder": "-9900", "name": "Golf", "category": "GOLF" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "10", "displayOrder": "-9420", "name": "Cricket", "category": "CRICKET" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "9", "displayOrder": "-9400", "name": "Boxing", "category": "BOXING" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "31", "displayOrder": "-9000", "name": "Rugby Union", "category": "RUGBY_UNION" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "30", "displayOrder": "-8999", "name": "Rugby League", "category": "RUGBY_LEAGUE" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "160", "displayOrder": "0", "name": "ATR", "category": "OFFER" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "1", "displayOrder": "4", "name": "American Football", "category": "AMERICAN_FB" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "5", "displayOrder": "50", "name": "Baseball", "category": "BASEBALL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "12", "displayOrder": "120", "name": "Cycling", "category": "CYCLING" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": {
+                "id": "151",
+                "displayOrder": "160",
+                "name": "INTERNATIONAL_TOTE",
+                "category": "INTL_TOTE"
+              }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "152", "displayOrder": "174", "name": "GAA", "category": "GAA" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "19", "displayOrder": "190", "name": "Greyhound Racing", "category": "GREYHOUNDS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "20", "displayOrder": "200", "name": "Handball", "category": "HANDBALL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "54", "displayOrder": "205", "name": "Hockey", "category": "HOCKEY" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "22", "displayOrder": "220", "name": "Ice Hockey", "category": "ICE_HOCKEY" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "24", "displayOrder": "233", "name": "Formula 1", "category": "MOTOR_CARS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "26", "displayOrder": "259", "name": "Motor Sports", "category": "MOTOR_SPORTS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "42", "displayOrder": "260", "name": "Movies", "category": "MOVIES" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "46", "displayOrder": "275", "name": "Politics", "category": "POLITICS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": {
+                "id": "95",
+                "displayOrder": "292",
+                "name": "Royal Specials",
+                "category": "ROYAL_SPECIALS"
+              }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "33", "displayOrder": "320", "name": "Specials", "category": "SPECIALS" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "35", "displayOrder": "350", "name": "UFC/MMA", "category": "UFC" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "39", "displayOrder": "352", "name": "Virtual Sports", "category": "VIRTUAL" }
+            },
+            {
+              "type": "element",
+              "name": "category",
+              "attributes": { "id": "148", "displayOrder": "500", "name": "ESports", "category": "ESPORTS" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

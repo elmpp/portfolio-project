@@ -1,0 +1,23 @@
+// https://goo.gl/ZLg5zv
+{
+  // meta will be ever-present data about import
+  meta: {
+    // "fetch"
+    // - does not apply for computed marketCollection entities
+
+    // "mandatory"
+    id: "16", // unique identifier as supplied in feed
+    feed: "coral",
+    name: "Main",
+    canonicalised_name: "main",
+    canonicalised_name_unique: "main-football"
+  },
+  // any associations will be defined explicitly..
+  associations: [],
+  // constraints: [
+  //   'canonicalised_name_unique'
+  // ],
+  fields: {
+    display_order: "9999"
+  }
+}

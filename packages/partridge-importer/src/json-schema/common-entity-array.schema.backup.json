@@ -1,0 +1,198 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "required": [
+    "meta",
+    "associations",
+    "fields"
+  ],
+  "properties": {
+    "meta": {
+      "$id": "#/properties/meta",
+      "type": "object",
+      "title": "The Meta Schema",
+      "required": [
+        "run_id",
+        "feed",
+        "url",
+        "id",
+        "name",
+        "canonicalised_name",
+        "canonicalised_name_unique"
+      ],
+      "properties": {
+        "run_id": {
+          "$id": "#/properties/meta/properties/run_id",
+          "type": "string",
+          "title": "The Run_id Schema",
+          "default": "",
+          "examples": [
+            "9f282611-e0fd-5650-8953-89c8e342da0b"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "feed": {
+          "$id": "#/properties/meta/properties/feed",
+          "type": "string",
+          "title": "The Feed Schema",
+          "default": "",
+          "examples": [
+            "coral"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "url": {
+          "$id": "#/properties/meta/properties/url",
+          "type": "string",
+          "title": "The Url Schema",
+          "default": "",
+          "examples": [
+            "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "id": {
+          "$id": "#/properties/meta/properties/id",
+          "type": "string",
+          "title": "The Id Schema",
+          "default": "",
+          "examples": [
+            "16"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "name": {
+          "$id": "#/properties/meta/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Millwall v Everton"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "canonicalised_name": {
+          "$id": "#/properties/meta/properties/canonicalised_name",
+          "type": "string",
+          "title": "The Canonicalised_name Schema",
+          "default": "",
+          "examples": [
+            "millwall-v-everton"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "canonicalised_name_unique": {
+          "$id": "#/properties/meta/properties/canonicalised_name_unique",
+          "type": "string",
+          "title": "The Canonicalised_name_unique Schema",
+          "default": "",
+          "examples": [
+            "wimbledon-vs-arsenal-09-09-2017"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "associations": {
+      "$id": "#/properties/associations",
+      "type": "array",
+      "title": "The Associations Schema"
+    },
+    "fields": {
+      "$id": "#/properties/fields",
+      "type": "object",
+      "title": "The Fields Schema",
+      "required": [
+        "is_outright",
+        "type",
+        "bet_till",
+        "status",
+        "betting_status",
+        "cashout_available",
+        "has_bet_in_play",
+        "displayed"
+      ],
+      "properties": {
+        "is_outright": {
+          "$id": "#/properties/fields/properties/is_outright",
+          "type": "boolean",
+          "title": "The Is_outright Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "type": {
+          "$id": "#/properties/fields/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "MATCH"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "bet_till": {
+          "$id": "#/properties/fields/properties/bet_till",
+          "type": "string",
+          "title": "The Bet_till Schema",
+          "default": "",
+          "examples": [
+            "2019-01-28 19:45:00+0000"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "status": {
+          "$id": "#/properties/fields/properties/status",
+          "type": "string",
+          "title": "The Status Schema",
+          "default": "",
+          "examples": [
+            "A"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "betting_status": {
+          "$id": "#/properties/fields/properties/betting_status",
+          "type": "string",
+          "title": "The Betting_status Schema",
+          "default": "",
+          "examples": [
+            "PRICED"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "cashout_available": {
+          "$id": "#/properties/fields/properties/cashout_available",
+          "type": "boolean",
+          "title": "The Cashout_available Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "has_bet_in_play": {
+          "$id": "#/properties/fields/properties/has_bet_in_play",
+          "type": "boolean",
+          "title": "The Has_bet_in_play Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "displayed": {
+          "$id": "#/properties/fields/properties/displayed",
+          "type": "boolean",
+          "title": "The Displayed Schema",
+          "default": false,
+          "examples": [
+            true
+          ]
+        }
+      }
+    }
+  }
+}

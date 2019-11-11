@@ -1,0 +1,6 @@
+{
+  "name": "org-common/util",
+  "private": true,
+  "main": "../dist/util/index.js",
+  "source": "../src/util/index.ts"
+}

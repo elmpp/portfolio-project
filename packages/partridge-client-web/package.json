@@ -1,0 +1,51 @@
+{
+  "name": "partridge-client-web",
+  "version": "0.86.0",
+  "license": "MIT",
+  "types": "typings/index.d.ts",
+  "scripts": {
+    "build": "razzle build",
+    "build:webpack-debug-web": "__BUNDLE_ANALYSER_WEB_ENABLE=1 webpack-dashboard -- npm run build",
+    "build:webpack-debug-node": "__BUNDLE_ANALYSER_NODE_ENABLE=1 webpack-dashboard -- npm run build",
+    "build:tidy": "rimraf build/*.hot-update.*",
+    "dev": "yarn build:tidy; DEBUG='routing:*,middleware:*,logging:*,org-build.*' OVERRIDABLE_TEST_KEY='totally tits' APP_ENV=local APP_NAME=$npm_package_name APP_VERSION=$npm_package_version FRONTEND_HOST_WWW_PORT=3000 PORT=3000 razzle start",
+    "dev:debug": "yarn dev --inspect",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "prepare": "cd ../../ && yarn prepare",
+    "start:prod": "OVERRIDABLE_TEST_KEY='totally tits' NODE_CONFIG_DIR='./build/config' APP_NAME=$npm_package_name APP_VERSION=$npm_package_version FRONTEND_HOST_WWW_PORT=3000 DEBUG='routing:*,middleware:*,logging:*' NODE_ENV=production node build/server.js"
+  },
+  "dependencies": {
+    "@jaredpalmer/after": "1.3.1",
+    "express": "4.17.1",
+    "partridge-client-components": "^0.86.0",
+    "partridge-client-core": "^0.86.0",
+    "partridge-logging": "^0.86.0",
+    "razzle": "^3.0.0",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-helmet": ">=5.2.0",
+    "react-native-web": "0.11.5",
+    "serialize-javascript": ">=1.5.0"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.34",
+    "@types/express": "^4.17.0",
+    "@types/helmet": "^0.0.43",
+    "@types/react-helmet": "^5.0.8",
+    "@types/serialize-javascript": "^1.5.0",
+    "@types/webpack-env": "^1.13.9",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-lodash": "3.3.4",
+    "babel-plugin-react-native-web": "^0.11.5",
+    "babel-preset-react-native": "^4.0.1",
+    "get-dev-paths": "0.1.1",
+    "node-libs-browser": "^2.2.1",
+    "null-loader": "^3.0.0",
+    "org-build": "^0.86.0",
+    "react-native-paper": "3.0.0-alpha.5",
+    "typescript": "3.6.4",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-dashboard": "^3.0.7"
+  },
+  "browserslist": ["chrome 70", "last 1 versions", "not ie <= 8"]
+}

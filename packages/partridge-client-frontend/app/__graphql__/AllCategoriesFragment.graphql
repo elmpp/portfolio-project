@@ -1,0 +1,13 @@
+#import "./Category1Fragment.graphql"
+#import "./Category2Fragment.graphql"
+#import "./Category3Fragment.graphql"
+
+fragment AllCategoriesFragment on Category3 {
+    ...Category3Fragment
+    category2 {
+        ...Category2Fragment
+        category1 {
+            ...Category1Fragment
+        }
+    }
+}

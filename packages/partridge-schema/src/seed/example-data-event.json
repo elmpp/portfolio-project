@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "id": "12242044",
+    "url": "http://localhost:9999/oxi/pub?template=getEventDetails&event=12242044",
+    "name": "FA Cup 5th Round Specials",
+    "run_id": "ed55271f-acd6-42f5-b6ff-50ebf365c746",
+    "feed_supplier": "coral"
+  },
+  "type": "EVENT",
+  "fields": {
+    "concrete": {
+      "url": "/e/12242044",
+      "status": "A",
+      "bet_till": "2019-02-15T19:45:00.000Z",
+      "displayed": false,
+      "bet_in_play": false,
+      "betting_status": "PRICED",
+      "cashout_available": true
+    },
+    "processed": { "date": "2019-02-15T19:45:00.000Z", "type": "OUTRIGHT", "display_order": 0 }
+  },
+  "crunch_tmp": { "unique_append": " 2019-02-15 Football" },
+  "associations": {
+    "CATEGORY3": [
+      {
+        "id": "442",
+        "url": "http://localhost:9999/oxi/pub?template=getTypes&class=97",
+        "name": "Premier League",
+        "run_id": "ed55271f-acd6-42f5-b6ff-50ebf365c746",
+        "feed_supplier": "coral"
+      }
+    ]
+  }
+}

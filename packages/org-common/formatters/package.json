@@ -1,0 +1,6 @@
+{
+  "name": "org-common/formatter",
+  "private": true,
+  "main": "../dist/formatters/index.js",
+  "source": "../src/formatters/index.ts"
+}

@@ -1,0 +1,5 @@
+export const HOST_WEB = 'www.odds4u.com'
+export const HOST_MOBILE = 'm.odds4u.com'
+export const HOST_ADMIN = 'admin.odds4u.com'
+export const HOST_ASSETS = 'assets.odds4u.com'
+export const HOST_API = 'api.odds4u.com'

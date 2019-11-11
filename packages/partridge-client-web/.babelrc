@@ -1,0 +1,6 @@
+// this is empty only to trick Razzle into enabling babel loading.. - https://tinyurl.com/y4u7khgr
+// options defined in ./babel.config.js (to enable efficacy for other directories)
+
+// DO NOT REMOVE OR RENAME!
+
+{}

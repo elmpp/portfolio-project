@@ -1,0 +1,58 @@
+
+enum Orientation {
+  PORTRAIT
+  LANDSCAPE
+}
+
+type DimensionsSet {
+  xs: Boolean!
+  sm: Boolean!
+  md: Boolean!
+  lg: Boolean!
+  xl: Boolean!
+  xxl: Boolean!
+}
+
+type Dimensions {
+  # ScaledSize
+  width: Int!
+  height: Int!
+  scale: Int!
+  fontScale: Int!
+  # Breakpoint-related
+  lessThan: DimensionsSet!
+  greaterThan: DimensionsSet!
+  is: DimensionsSet!
+  orientation: Orientation!
+}
+
+# required to be separate to DimensionsSet
+input DimensionsSetInput {
+  xs: Boolean!
+  sm: Boolean!
+  md: Boolean!
+  lg: Boolean!
+  xl: Boolean!
+  xxl: Boolean!
+}
+
+input DimensionsInput {
+  # ScaledSize
+  width: Int!
+  height: Int!
+  scale: Int!
+  fontScale: Int!
+  # Breakpoint-related
+  lessThan: DimensionsSetInput!
+  greaterThan: DimensionsSetInput!
+  is: DimensionsSetInput!
+  orientation: Orientation!
+}
+
+extend type Query {
+  dimensions: Dimensions!
+}
+
+extend type Mutation {
+  updateDimensions(dimensionsInput: DimensionsInput!): Dimensions
+}

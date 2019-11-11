@@ -1,0 +1,42 @@
+{
+  "name": "org-common",
+  "version": "0.86.0",
+  "description": "common code across projects",
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/org-common.git"
+  },
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "npm run type-check",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "prepare": "cd ../../ && yarn prepare",
+    "test": "npm run build && echo \"Error: run tests from root\" && exit 1",
+    "transpile": "npm run build",
+    "transpile:watch": "npm run build -- --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "devDependencies": {
+    "@types/lolex": "^0.0.0",
+    "@types/pretty-bytes": "^5.1.0",
+    "lolex": "^3.0.0"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "0.28.1",
+    "body-parser": "^1.18.3",
+    "human-duration": "^1.0.1",
+    "lodash": "4.17.15"
+  }
+}

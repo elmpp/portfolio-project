@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "checkJs": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false, // emits ".d.ts" files
+    "declarationMap": false, // emits ".map" files
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react", // ts-jest relies on this
+    "lib": ["es7", "dom"],
+    "module": "ESNext", // must be ES Module output so rollup etc can take advantage
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "plugins": [],
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2017", // to allow use of Object.values
+    // "target": "es5",
+  },
+  // exclude, include etc are resolved relative to file they're defined in!!
+  "exclude": [
+    "**/__tests__/**/*",
+    "**/__mocks__/**/*",
+    "**/*.pre-*.*",
+    "**/*.post-*.*",
+    "**/*.delete.*",
+    "**/*.deleteable.*",
+    "**/*.ignore.*",
+    "**/*.skip.*",
+    // cover everything, essentially
+    "**/node_modules",
+    "**/build",
+    // "**/scripts",
+    "**/acceptance-tests",
+    "**/webpack",
+    "**/jest",
+    "**/razzle.config.js",
+    "**/webpack.config.js",
+    "**/webpack-env",
+  ],
+}

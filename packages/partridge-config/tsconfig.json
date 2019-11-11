@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "module": "commonjs", // MUST BE COMMONJS!!
+    "rootDir": "src",
+    "outDir": "dist",
+  },
+  "include": ["src/**/*.ts", "../typings/index.d.ts"],
+}

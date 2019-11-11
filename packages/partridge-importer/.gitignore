@@ -1,0 +1,4 @@
+# the build output file - must be here due to weird @google-cloud/functions-framework code loading
+index.js
+index.js.map
+*hot-update.js*

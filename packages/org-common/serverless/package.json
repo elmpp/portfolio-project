@@ -1,0 +1,6 @@
+{
+  "name": "org-common/serverless",
+  "private": true,
+  "main": "../dist/serverless/index.js",
+  "source": "../src/serverless/index.ts"
+}

@@ -1,0 +1,11 @@
+fragment MarketFragment on Market {
+    id
+    name
+    display_name
+    display_order
+    canonicalised_name
+    type
+    role {
+        name
+    }
+}

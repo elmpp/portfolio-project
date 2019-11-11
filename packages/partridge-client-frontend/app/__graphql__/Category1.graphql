@@ -1,0 +1,17 @@
+# ---- https://github.com/apollographql/graphql-tag
+#import "./Category3Fragment.graphql"
+#import "./Category2Fragment.graphql"
+#import "./Category1Fragment.graphql"
+
+
+query Category1(
+  $canonicalised_name: String,
+  $category1__canonicalised_name: String,
+) {
+  category1 (
+    canonicalised_name: $canonicalised_name,
+    category1__canonicalised_name: $category1__canonicalised_name,
+  ) {
+      ...Category1Fragment
+  }
+}

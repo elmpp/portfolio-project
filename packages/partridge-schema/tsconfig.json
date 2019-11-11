@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "lib": ["es7"], // no need for DOM stuff etc as node app
+    // required by typeorm - https://goo.gl/eBRroS
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    // v.forgiving options for knex-generated stuff
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "strictNullChecks": false,
+    "noUnusedParameters": false,
+  },
+  "include": ["src/**/*.ts", "../partridge-models/src/db-connection.ts"],
+  "files": ["../typings/index.d.ts"],
+}

@@ -1,0 +1,39 @@
+{
+  "name": "partridge-config",
+  "version": "0.86.0",
+  "description": "Config for Partridge",
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge-config.git"
+  },
+  "main": "dist/index.js",
+  "browser": "dist-web/index.js",
+  "react-native": "dist-partridge/index.js",
+  "source": "dist-partridge/index.js",
+  "types": "dist/index",
+  "scripts": {
+    "build": "tsc",
+    "devold": "../partridge-config/../../node_modules/.bin/nodemon",
+    "lint": "npm run type-check",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "prepare": "cd ../../ && yarn prepare",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "transpile": "npm run build",
+    "transpile:watch": "npm run build -- --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "dependencies": {
+    "config": "^2.0.1",
+    "lodash": "4.17.15"
+  },
+  "devDependencies": {
+    "typescript": "3.6.4"
+  }
+}

@@ -1,0 +1,18 @@
+#import "./Category1Fragment.graphql"
+#import "./Category2Fragment.graphql"
+#import "./Category3Fragment.graphql"
+
+query navigation {
+  category1 {
+    ...Category1Fragment
+    display_order
+    category2 {
+      ...Category2Fragment
+      display_order
+      category3 {
+        ...Category3Fragment
+        display_order
+      }
+    }
+  }
+}

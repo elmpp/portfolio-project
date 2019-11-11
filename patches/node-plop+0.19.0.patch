@@ -1,0 +1,13 @@
+diff --git a/node_modules/node-plop/lib/actions/_common-action-add-file.js b/node_modules/node-plop/lib/actions/_common-action-add-file.js
+index 8a6ff4b..3c1c0c0 100644
+--- a/node_modules/node-plop/lib/actions/_common-action-add-file.js
++++ b/node_modules/node-plop/lib/actions/_common-action-add-file.js
+@@ -31,7 +31,7 @@ function* addFile(data, cfg, plop) {
+     let destExists = yield fspp.fileExists(fileDestPath); // if we are forcing and the file already exists, delete the file
+ 
+     if (force === true && destExists) {
+-      yield (0, _del.default)([fileDestPath]);
++      yield (0, _del.default)([fileDestPath], {force});
+       destExists = false;
+     } // we can't create files where one already exists
+ 

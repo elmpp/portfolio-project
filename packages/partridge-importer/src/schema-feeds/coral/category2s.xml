@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- OXi dbPublish-->
+<!-- Copyright (c) 2001, 2002, 2003 Orbis Technology Ltd. All rights reserved.-->
+<oxip version="7.1" created="2019-02-11 06:59:23" lastMsgId="" requestTime="0.0524">
+  <response request="getClasses" code="001" message="success" debug="" provider="GENERIC">
+    <disclaimer>
+    </disclaimer>
+    <class id="223" displayOrder="-9999" name="Horse Racing - Live" category="HORSE_RACING" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="97" displayOrder="-6" name="Football England" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="266" displayOrder="-1" name="Tennis" category="TENNIS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="2" displayOrder="0" name="American Football" category="AMERICAN_FB" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="12" displayOrder="0" name="Baseball" category="BASEBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="14" displayOrder="0" name="Basketball Austria" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="17" displayOrder="0" name="Basketball Brazil" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="18" displayOrder="0" name="Basketball Bulgaria" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="25" displayOrder="0" name="Basketball European Competitions" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="33" displayOrder="0" name="Basketball Italy" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="44" displayOrder="0" name="Basketball Serbia" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="46" displayOrder="0" name="Basketball South Korea" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="47" displayOrder="0" name="Basketball Spain" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="50" displayOrder="0" name="Basketball Turkey" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="51" displayOrder="0" name="Basketball USA" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="56" displayOrder="0" name="Boxing" category="BOXING" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="58" displayOrder="0" name="Cricket" category="CRICKET" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="61" displayOrder="0" name="Cycling" category="CYCLING" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="63" displayOrder="0" name="Darts" category="DARTS" channels="IPCMQWJ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="71" displayOrder="0" name="Football Argentina" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="73" displayOrder="0" name="Football Australia" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="74" displayOrder="0" name="Football Austria" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="78" displayOrder="0" name="Football Belgium" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="81" displayOrder="0" name="Football Brazil" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="82" displayOrder="0" name="Football Bulgaria" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="91" displayOrder="0" name="Football Czech Republic" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="93" displayOrder="0" name="Football Denmark" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="102" displayOrder="0" name="Football France" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="105" displayOrder="0" name="Football Germany" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="106" displayOrder="0" name="Football Greece" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="112" displayOrder="0" name="Football India" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="118" displayOrder="0" name="Football Ireland" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="120" displayOrder="0" name="Football Italy" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="140" displayOrder="0" name="Football Netherlands" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="151" displayOrder="0" name="Football Poland" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="152" displayOrder="0" name="Football Portugal" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="154" displayOrder="0" name="Football Romania" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="158" displayOrder="0" name="Football Scotland" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="165" displayOrder="0" name="Football UEFA Club Competitions" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="166" displayOrder="0" name="Football Spain" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="170" displayOrder="0" name="Football Switzerland" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="175" displayOrder="0" name="Football Turkey" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="195" displayOrder="0" name="Golf" category="GOLF" channels="IPCMQWJ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="198" displayOrder="0" name="Greyhounds - Live" category="GREYHOUNDS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="201" displayOrder="0" name="Greyhounds - Specials" category="GREYHOUNDS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="205" displayOrder="0" name="Handball Denmark" category="HANDBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="218" displayOrder="0" name="Handball Spain" category="HANDBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="226" displayOrder="0" name="Future Racing Specials" category="HORSE_RACING" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="229" displayOrder="0" name="Ice Hockey Austria" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="230" displayOrder="0" name="Ice Hockey Czech Republic" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="231" displayOrder="0" name="Ice Hockey Denmark" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="232" displayOrder="0" name="Ice Hockey World Club Competitions" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="233" displayOrder="0" name="Ice Hockey Finland" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="234" displayOrder="0" name="Ice Hockey France" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="235" displayOrder="0" name="Ice Hockey Germany" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="241" displayOrder="0" name="Ice Hockey Russia" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="242" displayOrder="0" name="Ice Hockey Slovakia" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="243" displayOrder="0" name="Ice Hockey Sweden" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="244" displayOrder="0" name="Ice Hockey Switzerland" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="245" displayOrder="0" name="Ice Hockey USA" category="ICE_HOCKEY" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="246" displayOrder="0" name="Motor Bikes All Motor Bikes" category="MOTOR_BIKES" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="247" displayOrder="0" name="Formula 1" category="MOTOR_CARS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="251" displayOrder="0" name="Motor Sports NASCAR" category="MOTOR_SPORTS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="252" displayOrder="0" name="Motor Sports World Rally Championship" category="MOTOR_SPORTS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="256" displayOrder="0" name="Rugby League" category="RUGBY_LEAGUE" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="259" displayOrder="0" name="Rugby Union" category="RUGBY_UNION" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="261" displayOrder="0" name="Snooker" category="SNOOKER" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="267" displayOrder="0" name="Tennis New Year Specials" category="TENNIS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="268" displayOrder="0" name="UFC/MMA" category="UFC" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="270" displayOrder="0" name="Volleyball Czech Republic" category="VOLLEYBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="274" displayOrder="0" name="Volleyball Germany" category="VOLLEYBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="275" displayOrder="0" name="Volleyball Greece" category="VOLLEYBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="279" displayOrder="0" name="Volleyball Poland" category="VOLLEYBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="280" displayOrder="0" name="Volleyball Russia" category="VOLLEYBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="284" displayOrder="0" name="Winter Sports" category="WINTER_SPORTS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="313" displayOrder="0" name="Gaelic Football All Gaelic Football" category="GAA" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="315" displayOrder="0" name="Hurling All Hurling" category="GAA" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="321" displayOrder="0" name="Horse Racing - Tote Pools" category="HORSE_RACING" channels="IP" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="476" displayOrder="0" name="Basketball Argentina" category="BASKETBALL" channels="IPCMQD" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="487" displayOrder="0" name="Basketball Japan" category="BASKETBALL" channels="IPCMQD" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="490" displayOrder="0" name="Basketball Romania" category="BASKETBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="556" displayOrder="0" name="Volleyball Brazil" category="VOLLEYBALL" channels="IPCMQDT" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="557" displayOrder="0" name="Volleyball South Korea" category="VOLLEYBALL" channels="IPCMQDT" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="802" displayOrder="0" name="Horse Racing - Intl Thoroughbred Pools" category="INTL_TOTE" channels="PCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="870" displayOrder="0" name="Formula E" category="MOTOR_SPORTS" channels="IPCMQDTGWJU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="903" displayOrder="0" name="ATR" category="OFFER" channels="IPCMQDTGWJUef" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="100" displayOrder="1" name="Football Club Friendlies" category="FOOTBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="115" displayOrder="1" name="Football International" category="FOOTBALL" channels="IPCMQU" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="301" displayOrder="98" name="Politics UK" category="POLITICS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="300" displayOrder="99" name="Politics Specials" category="POLITICS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="302" displayOrder="99" name="Politics International" category="POLITICS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="263" displayOrder="100" name="Royal Specials" category="ROYAL_SPECIALS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="294" displayOrder="100" name="Movies All Movies" category="MOVIES" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="306" displayOrder="104" name="TV Specials International" category="TV_SPECIALS" channels="IPCMQT" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="305" displayOrder="105" name="TV Specials UK" category="TV_SPECIALS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="755" displayOrder="150" name="Football England Perf" category="FOOTBALL" channels="IPCMQD" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="307" displayOrder="160" name="TV Specials Awards" category="TV_SPECIALS" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="285" displayOrder="200" name="Virtual Horse Racing" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="286" displayOrder="201" name="Virtual Greyhounds" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="287" displayOrder="202" name="Virtual Football" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="291" displayOrder="203" name="Virtual Tennis" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="288" displayOrder="204" name="Virtual Motorsports" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="289" displayOrder="205" name="Virtual Speedway" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="290" displayOrder="206" name="Virtual Cycling" category="VIRTUAL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="517" displayOrder="1000" name="Football Pools" category="FOOTBALL" channels="PCT" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="67" displayOrder="9999" name="Football Specials" category="FOOTBALL" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="759" displayOrder="9999" name="PERFHorse Racing -Live" category="HORSE_RACING" channels="IPCMQ" lastUpdateDate="" lastUpdateTime=""/>
+    <class id="363" displayOrder="10000" name="Perf Tennis All Tennis" category="TENNIS" channels="IPMQ" lastUpdateDate="" lastUpdateTime=""/>
+  </response>
+</oxip>

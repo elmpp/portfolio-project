@@ -1,0 +1,27 @@
+# ---- https://github.com/apollographql/graphql-tag
+#import "./EventFragment.graphql"
+#import "./ArticleFragment.graphql"
+#import "./AllCategoriesFragment.graphql"
+
+
+query event_article(
+$event__canonicalised_name: String,
+$category1__canonicalised_name: String,
+$category3__canonicalised_name: String,
+$limit: Int
+) {
+  event_article (
+    event__canonicalised_name: $event__canonicalised_name,
+    category1__canonicalised_name: $category1__canonicalised_name,
+    category3__canonicalised_name: $category3__canonicalised_name
+    limit: $limit,
+  ) {
+    ...ArticleFragment
+    event {
+      ...EventFragment
+      category3 {
+        ...AllCategoriesFragment
+      }
+    }
+  }
+}

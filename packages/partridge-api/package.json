@@ -1,0 +1,48 @@
+{
+  "name": "partridge-api",
+  "version": "0.86.0",
+  "description": "graphql api service",
+  "keywords": [
+    "graphql",
+    "api"
+  ],
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge.git"
+  },
+  "scripts": {
+    "build": "DEBUG='org-build.*' NODE_CONFIG_DIR='./node_modules/partridge-config/dist/config' APP_ENV=production APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx orgBuild build",
+    "build:webpack-debug-web": "__BUNDLE_ANALYSER_WEB_ENABLE=1 webpack-dashboard -- npm run build",
+    "build:webpack-debug-node": "__BUNDLE_ANALYSER_NODE_ENABLE=1 webpack-dashboard -- npm run build",
+    "dev": "kill-port 3003; PORT=3003 NODE_CONFIG_DIR='./node_modules/partridge-config/dist/config' APP_ENV=local APP_NAME=$npm_package_name APP_VERSION=$npm_package_version npx orgBuild start",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "lint": "npm run type-check",
+    "prepare": "cd ../../ && yarn prepare",
+    "start:prod": "OVERRIDABLE_TEST_KEY='totally tits' NODE_ENV=development DEBUG='routing:*,middleware:*,logging:*,org-build.*' NODE_CONFIG_DIR='./build/config' APP_NAME=$npm_package_name APP_VERSION=$npm_package_version FRONTEND_HOST_WWW_PORT=3000 node build/server.js",
+    "type-check": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "dependencies": {
+    "@graphile-contrib/pg-simplify-inflector": "^5.0.0-beta.1",
+    "@types/compression": "^0.0.36",
+    "compression": "^1.7.4",
+    "express": "4.17.1",
+    "graphile-utils": "^4.4.4",
+    "lodash": "4.17.15",
+    "partridge-config": "^0.86.0",
+    "partridge-logging": "^0.86.0",
+    "partridge-models": "^0.86.0",
+    "postgraphile": "^4.4.0",
+    "shell": "^0.86.0"
+  },
+  "devDependencies": {
+    "org-build": "^0.86.0",
+    "typescript": "3.6.4"
+  }
+}

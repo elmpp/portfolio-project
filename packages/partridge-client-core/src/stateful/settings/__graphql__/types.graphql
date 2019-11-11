@@ -1,0 +1,23 @@
+
+# Defines the app size (will have differing component trees as a result)
+enum LayoutSize {
+  SMALL
+  LARGE
+}
+
+type Settings {
+  layoutSize: LayoutSize
+}
+
+input SettingsInput {
+  layoutSize: LayoutSize
+}
+
+extend type Query {
+  settings: Settings!
+}
+
+# no need for mutation here - this will be set by server through the defaults
+# extend type Mutation {
+#   updateDimensions(dimensionsInput: DimensionsInput!): Dimensions
+# }

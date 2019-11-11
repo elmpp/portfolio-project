@@ -1,0 +1,19 @@
+// collections are grouping of markets. See `assign-collections.js` of Madcor project
+// *** not originating from feeds ***
+{
+  // meta will be ever-present data about import
+  meta: {
+    // fetch-specific fields. Different here as this isn't feed-derived
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    feed: "coral",
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+  },
+  associations: [
+  ],
+  constraints: [
+    'canonicalised_name_unique',
+  ],
+  display_order: "-9999",
+  name: "Main Markets",
+  canonicalised_name: "main-markets",
+}

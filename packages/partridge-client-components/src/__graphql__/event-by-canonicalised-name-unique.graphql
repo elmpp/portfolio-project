@@ -1,0 +1,49 @@
+#import "./outcomeFragment.graphql"
+
+query EventByCanonicalisedNameUnique($canonicalisedNameUnique: String!) {
+  eventByCanonicalisedNameUniqueQuery(canonicalisedNameUnique: $canonicalisedNameUnique) {
+    id
+    canonicalisedName
+    canonicalisedNameUnique
+    category3Id
+    displayOrder
+    displayed
+    eventDate
+    feedSupplier
+    name
+    nodeId
+    status
+    type
+    url
+    markets(condition: { canonicalisedName: "match-result" }) {
+      pageInfo {
+        hasNextPage
+      }
+      nodes {
+        id
+        cashoutAvailable
+        eachwayAvailable
+        firstFourAvailable
+        forecastAvailable
+        guaranteedPriceAvailable
+        placeAvailable
+        quinellaAvailable
+        tricastAvailable
+        displayOrder
+        isDefault
+        feedSupplier
+        betInPlay
+        betTill
+        bettingStatus
+        status
+        name
+        canonicalisedName
+        outcomes {
+          nodes {
+            ...OutcomeFragment
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+// https://goo.gl/hNM87V
+{
+  // meta will be ever-present data about import
+  meta: {
+    // "fetch"
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+
+    // "mandatory"
+    id: "16", // unique identifier as supplied in feed
+    feed: "coral",
+    name: "Both Teams to Score",
+    canonicalised_name: "both-teams-to-score",
+
+    // This defines how distinct we want entities to be in db. Although Coral may supply outcomes
+    // with distinct IDs for same name (e.g. Both Teams to Score) but different event we 
+    // want them to be "merged".
+    //
+    // In essence, all entities except Event have same "unique format".
+    // This field will be computed by Postgres when inserting/updating and will use the 
+    // `unique_append` tmp value set for all common entities. @see type `EntityTmp`
+    canonicalised_name_unique: "both-teams-to-score-football", // has the whole uniqueness
+  },
+  // any associations will be defined explicitly..
+  associations: [],
+  // defines the [unique] constraints that will be required (not for CommonEntity)
+  // constraints: [
+  //   'canonicalised_name_unique'
+  // ],
+  fields: {
+    // destined for mergeable table
+    display_order: "-9999", // destined for appropriate concrete entity once saved
+
+    // destined for concrete table
+    odds: "2/5",
+    odds_decimal: "1.40",
+    handicap: "0.5", // https://goo.gl/J3roj5
+    runner_number: "1"
+  }
+}

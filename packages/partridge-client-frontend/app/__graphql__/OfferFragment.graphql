@@ -1,0 +1,6 @@
+fragment OfferFragment on Offer {
+    id
+    name
+    conditions
+    deeplink
+}

@@ -1,0 +1,50 @@
+{
+  "name": "partridge-client-core",
+  "version": "0.86.0",
+  "description": "common code for client apps",
+  "keywords": [
+    "typescript",
+    "util"
+  ],
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge.git"
+  },
+  "scripts": {
+    "codegen": "yarn combine-schema && ./scripts/codegen.sh generate --debug",
+    "combine-schema": "./scripts/combine-schemas.js",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "lint": "eslint --cache --config ../../.eslintrc --format=../../node_modules/eslint-formatter-pretty ./ && npm run type-check",
+    "prepare": "cd ../../ && yarn prepare",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "type-check": "tsc --noEmit"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^3.0.1",
+    "@apollo/react-ssr": "^3.0.1",
+    "apollo-client": "^2.6.3",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "4.17.15",
+    "partridge-config": "^0.86.0",
+    "partridge-logging": "^0.86.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.8.1",
+    "@graphql-codegen/core": "1.8.1",
+    "@graphql-codegen/fragment-matcher": "1.8.1",
+    "@graphql-codegen/typescript": "1.8.1",
+    "@graphql-codegen/typescript-operations": "1.8.1",
+    "babel-plugin-import-graphql": "2.7.0",
+    "graphql": "^14.5.4",
+    "graphql-tools": "^3.1.1",
+    "shell": "^0.86.0",
+    "typescript": "3.6.4"
+  }
+}

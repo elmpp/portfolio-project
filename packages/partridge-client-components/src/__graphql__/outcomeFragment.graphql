@@ -1,0 +1,14 @@
+fragment OutcomeFragment on OutcomeView {
+  id
+  odds
+  oddsDecimal
+  handicap
+  displayOrder
+  isHome
+  feedSupplier
+  livePriceAvailable
+  startingPriceAvailable
+  status
+  name
+  canonicalisedName
+}

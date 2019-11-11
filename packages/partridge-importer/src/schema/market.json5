@@ -1,0 +1,47 @@
+// https://goo.gl/TaVQdm
+{
+  // meta will be ever-present data about import
+  "meta": {
+    // "fetch"
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+
+    // "mandatory"
+    "id": "16",
+    feed: "coral",
+    "name": "Match Result",
+    "canonicalised_name": "match-result",
+
+    // @see outcome.json5
+    "canonicalised_name_unique": "match-result-football",
+  },
+  // any associations will be defined explicitly..
+  associations: [
+    {
+      // type: "one_to_many",  // please see `assign-collections.js` of Madcor
+      to: "collections",
+      constraints: [/* id, name, canonicalised_name, canonicalised_name_unique */],
+    },
+  ],
+  // // defines the [unique] constraints that will be required (not for CommonEntity)
+  // constraints: [
+  //   'canonicalised_name_unique',
+  //   ['is_default', 'category1']
+  // ],
+  fields: {
+    // destined for mergeable table
+    display_order: "-9999", // destined for appropriate concrete entity once saved
+
+    // destined for concrete table
+    cashout_available: "Y",
+    eachway_available: "Y",
+    forecast_available: "Y",
+    guaranteed_price_available: "Y",
+    live_price_available: "Y",
+    place_available: "Y",
+    starting_price_available: "Y",
+    status: "A", // what is this stuff?
+    tricast_available: "Y",
+    url: "/m/284709375",
+  },
+}

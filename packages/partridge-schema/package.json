@@ -1,0 +1,43 @@
+{
+  "name": "partridge-schema",
+  "version": "0.86.0",
+  "description": "Database and data management",
+  "main": "src/index.js",
+  "keywords": [
+    "postgres"
+  ],
+  "author": "Matt Penrice <matthew.penrice@gmail.com>",
+  "homepage": "https://github.com/elmpp/partridge#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elmpp/partridge.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:watch": "tsc -p tsconfig.json --watch",
+    "dev": "npm run transpile:watch",
+    "dev:code-load": "NODE_CONFIG_DIR='../partridge-config/dist/config' npx ts-node ./src/code/load-code.ts",
+    "format": "prettier --write '{.,src/**}/*.{js,jsx,ts,tsx}'",
+    "prepare": "cd ../../ && yarn prepare",
+    "transpile:db": "../partridge-schema/../../node_modules/.bin/nodemon",
+    "transpile:down": "pkill -f '../partridge-schema/../../node_modules/.bin/nodemon' || true",
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "transpile:watch": "npm run transpile:down; run-p transpile:db build:watch"
+  },
+  "bugs": {
+    "url": "https://github.com/elmpp/partridge/issues"
+  },
+  "dependencies": {
+    "partridge-models": "^0.86.0",
+    "pg": "^7.8.0",
+    "reflect-metadata": "^0.1.13",
+    "shell": "^0.86.0",
+    "typeorm": "0.2.20"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "ts-node": "8.2.0",
+    "typescript": "3.6.4"
+  }
+}

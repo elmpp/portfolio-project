@@ -1,0 +1,6 @@
+{
+  "name": "partridge-logging/middleware",
+  "private": true,
+  "main": "../lib/middleware/index.js",
+  "source": "../src/middleware/index.ts"
+}

@@ -1,0 +1,5 @@
+fragment Category2Fragment on Category2 {
+    name
+    canonicalised_name
+    display_name
+}

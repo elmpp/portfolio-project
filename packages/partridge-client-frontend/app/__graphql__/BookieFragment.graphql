@@ -1,0 +1,3 @@
+fragment BookieFragment on Bookie {
+    name
+}

@@ -1,0 +1,34 @@
+// https://goo.gl/sywY8e
+{
+  // meta will be ever-present data about import
+  meta: {
+    // "fetch"
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+
+    // "mandatory"
+    id: "16",
+    feed: "coral",
+    name: "England",
+    canonicalised_name: "england",
+
+    // category unique are fairly simple
+    canonicalised_name_unique: "england-football", // YYYY-MM-DD ISO-8601
+  },
+  // any associations will be defined explicitly..
+  associations: [
+    {
+      to: "category1",
+      constraints: [/* id, name, canonicalised_name, canonicalised_name_unique */],
+    },
+    {
+      type: "one_to_many",
+      to: "category3",
+      constraints: [/* id, name, canonicalised_name, canonicalised_name_unique */],
+    }
+  ],
+  fields: {
+    // processed
+    display_order: "-9999",
+  },
+}

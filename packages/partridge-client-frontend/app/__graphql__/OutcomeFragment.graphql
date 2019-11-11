@@ -1,0 +1,12 @@
+fragment OutcomeFragment on Outcome {
+    id
+    name
+    display_name
+    canonicalised_name
+    odds
+    odds_decimal
+    odds_rank
+    odds_rank_unique
+    deeplink
+    type
+}

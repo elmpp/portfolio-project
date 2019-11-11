@@ -1,0 +1,11 @@
+{
+  "docs": {
+    "Project": ["overview", "packages_and_lerna"],
+    "Development": ["local", "jest", "snippets-js-ts", "snippets-react", "snippets-babel-etc", "bash-snippets", "feed_importing", "logging_stackdriver", "schema_models", "errors_previous"],
+    "Design": ["frontend"],
+    "Sysadmin": ["ci", "github_integration", "ci_gcloud", "db"],
+    "Third-Party": ["kubernetes", "gcloud", "minikube", "helm"],
+    "Data": ["feeds"],
+    "Admin": ["tasks"]
+  }
+}

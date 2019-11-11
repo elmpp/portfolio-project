@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "CommonJS",
+    "lib": ["es7"], // no need for DOM stuff etc as node app
+  },
+  "include": ["src/**/*.ts"],
+  "files": ["./typings/index.d.ts", "../typings/index.d.ts"],
+}

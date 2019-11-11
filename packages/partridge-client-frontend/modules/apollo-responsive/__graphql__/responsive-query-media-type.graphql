@@ -1,0 +1,5 @@
+query ResponsiveQueryMediaType{
+  responsive @client {
+    mediaType
+  }
+}

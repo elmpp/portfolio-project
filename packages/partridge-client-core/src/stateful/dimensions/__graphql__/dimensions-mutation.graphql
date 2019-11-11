@@ -1,0 +1,35 @@
+mutation DimensionsMutation($dimensionsInput: DimensionsInput!) {
+  updateDimensions(dimensionsInput: $dimensionsInput) @client {
+    # ScaledSize
+    width
+    height
+    scale
+    fontScale
+    # Breakpoint-related
+    lessThan {
+      xs
+      sm
+      md
+      lg
+      xl
+      xxl
+    }
+    greaterThan {
+      xs
+      sm
+      md
+      lg
+      xl
+      xxl
+    }
+    is {
+      xs
+      sm
+      md
+      lg
+      xl
+      xxl
+    }
+    orientation
+  }
+}

@@ -1,0 +1,29 @@
+#
+# This is the the definition file for generating our graphql types. It replaces
+# apollo as it is pap and can't handle server/client schemas
+#
+#  - graphql-code-generator - https://tinyurl.com/y2kow4pq
+#  - good example here - https://tinyurl.com/y6alrhvl
+#  - micromatch library used for globbing - https://github.com/micromatch/micromatch
+#
+
+schema: ../partridge-client-core/schema-dump-combined.graphql # both api and client schemas already combined
+generates:
+  ./src/__types__/graphql/__generated__/types.ts:
+    config:
+      maybeValue: T | undefined
+      enumValues:
+        FeedSupplierEnum: '../../../../../partridge-config/src/__types__/config#FeedSupplierName'
+      # namingConvention:
+      #   enumValues: "change-case#lowerCase" # postgraphile exports enums uppercase unexpectedly - https://tinyurl.com/y3z2zcvh
+    # documents: ../{partridge-client-core/src/stateful,partridge-client-components/src}/**/*.graphql # documents = query/subscriptions etc
+    documents:
+      - ../partridge-client-core/src/stateful/**/*.graphql # documents = query/subscriptions etc
+      - ../partridge-client-components/src/**/*.graphql # documents = query/subscriptions etc
+    plugins:
+      - typescript
+      - typescript-operations # required for mutation/query/fragment support - https://tinyurl.com/y3xbajh9
+  ./src/__types__/graphql/__generated__/introspection-result.ts: # required to allow our use of fragments as apollo shits itself
+    plugins:
+      - fragment-matcher
+      - typescript

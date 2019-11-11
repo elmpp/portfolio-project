@@ -1,0 +1,8 @@
+fragment Category3Fragment on Category3 {
+    id
+    name
+    canonicalised_name
+    display_name
+    category1_canonicalised_name
+    category2_canonicalised_name
+}

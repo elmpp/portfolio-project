@@ -1,0 +1,9 @@
+# define these here so that can use the `extend` keyword later and avoid dupes
+extend type Mutation {
+  # https://goo.gl/62J7sf
+  null: Boolean 
+}
+
+extend type Query {
+  fake: Boolean 
+}

@@ -1,0 +1,11 @@
+fragment ArticleFragment on BaseArticle {
+    title
+    body
+    excerpt
+    author
+    date_no_time
+    date_stamp
+    date_human
+    date_short
+    date
+}

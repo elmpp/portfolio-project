@@ -1,0 +1,27 @@
+mutation ResponsiveMutation($responsiveObj: ResponsiveInput!) {
+  updateResponsive(responsiveObj: $responsiveObj) @client {
+    lessThan {
+      extraSmall,
+      small,
+      medium,
+      large,
+      infinity
+    },
+    greaterThan {
+      extraSmall,
+      small,
+      medium,
+      large,
+      infinity
+    }
+    is {
+      extraSmall,
+      small,
+      medium,
+      large,
+      infinity
+    }
+    mediaType
+    orientation
+  }
+}

@@ -1,0 +1,24 @@
+// concrete outcomes represent instances of an outcome for a market
+// they won't necessarily exist in the "queue" but be created once "crunched"8
+{
+  // meta will be ever-present data about import
+  meta: {
+    run_id: "9f282611-e0fd-5650-8953-89c8e342da0b", // https://goo.gl/tqX5nR
+    feed: "coral",
+    url: "http://xmlfeeds.coral.co.uk/oxi/pub?template=getCategories",
+    id: "16", // unique identifier as supplied in feed
+  },
+  // any associations will be defined explicitly..
+  associations: [
+    {
+      to: "market",
+      constraints: [/* id, name, canonicalised_name, canonicalised_name_unique */],
+    },
+  ],
+  // defines the [unique] constraints that will be required (not for CommonEntity)
+  // constraints: {
+  // },
+  display_order: "-9999",
+  home_or_away: "home", // to be a nullable enum 'home' / 'away'
+  lane_number: 3, // for horse races
+}

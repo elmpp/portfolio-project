@@ -1,0 +1,12 @@
+"**/*.pre-*.*",
+"**/*.post-*.*",
+"**/*.delete.*",
+"**/*.deleteable.*",
+"**/*.ignore.*",
+"**/*.skip.*",
+"**/*.orig.*",
+packages/**/lib/**/*
+packages/**/dist/**/*
+
+# "node_modules/**/*" /node_modules is ignored by default - https://tinyurl.com/y5hveygy
+packages/*/node_modules/**/*

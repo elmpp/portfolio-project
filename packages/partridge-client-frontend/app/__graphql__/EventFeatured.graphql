@@ -1,0 +1,62 @@
+# ---- https://github.com/apollographql/graphql-tag
+#import "./EventFragment.graphql"
+#import "./MarketFragment.graphql"
+#import "./OutcomeFragment.graphql"
+#import "./BookieFragment.graphql"
+#import "./OfferFragment.graphql"
+#import "./ArticleFragment.graphql"
+#import "./AllCategoriesFragment.graphql"
+#import "./FeaturedFragment.graphql"
+
+query eventsFeatured(
+  $type: String!,
+  $entity_type: String,
+  $market__role: String,
+  $outcome__odds_rank_unique: Int,
+  $limit: Int
+) {
+  featured(
+    type: $type,
+    entity_type: $entity_type,
+    market__role: $market__role,
+    outcome__odds_rank_unique: $outcome__odds_rank_unique,
+    limit: $limit
+  ) {
+    ...FeaturedFragment
+    media {
+      description
+      extralarge
+      large
+      medium
+      preview
+    }
+    event {
+      ...EventFragment
+      market {
+        ...MarketFragment
+        outcome {
+          ...OutcomeFragment
+          media_logo {
+            preview
+            small
+          }
+          bookie {
+            ...BookieFragment
+          }
+        }
+      }
+      article {
+        ...ArticleFragment
+      }
+      category3 {
+        ...AllCategoriesFragment
+      }
+    }
+    offer {
+      ...OfferFragment
+      domain {
+        ...EventFragment
+      }
+    }
+  }
+}
