@@ -4,5 +4,5 @@ Hi there. This is an existing private project that has been cloned, made public,
 
 It's a monorepo setup and each package should show different area of concern. It's nearly all typescript, although some transpilation folders may exist still
 
-Probably good place to start would be the partridge-importer package - that's the most "complex" i suppose.
+Probably good place to start would be the `partridge-importer` package - that's the most "complex" i suppose.
 
